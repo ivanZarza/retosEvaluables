@@ -43,3 +43,5 @@ return contador
 }
 
 console.log(add(['hola','adios']));
+
+export { add, isRainbow }

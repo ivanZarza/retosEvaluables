@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.add = add;
+exports.isRainbow = isRainbow;
 function evenNumbers(num) {
     var arrayImpares = [];
     for (var i = 1; i <= num; i += 2) {

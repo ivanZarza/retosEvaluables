@@ -85,3 +85,4 @@ function isEven(number){
 
 isEven(4);
 
+export { zodiaco, continent, isEven } from './condicionales.js';
