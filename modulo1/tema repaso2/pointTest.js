@@ -10,3 +10,6 @@ console.log(myPoint.getY());
 var string = myPoint.toString();
 console.log(string);
 console.log(typeof string);
+console.log(myPoint.distanceToOrigin());
+var punto2 = new point_1.Point(10, 10);
+console.log(myPoint.calculateDistance(punto2));

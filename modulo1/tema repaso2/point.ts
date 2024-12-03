@@ -26,12 +26,21 @@ class Point {
       let x = this.x;
       let y = this.y;
       return `${x},${y}`;
+    }
+    
+    distanceToOrigin(): number {
+      // let x:number = this.x - 0;
+      // let y:number = this.y - 0;
+      // return Math.sqrt(x*x + y*y); 
+      return Math.sqrt(this.x*this.x + this.y*this.y);
     } 
+
+    calculateDistance(anotherPoint:Point): number {
+      let x = this.x - anotherPoint.getX();
+      let y = this.y - anotherPoint.getY();
+      return Math.sqrt(x*x + y*y);
+    }
 }
-
-let myPoint = new Point(10, 10);
-
-console.log(myPoint.getX()); 
 
 export { Point }
 

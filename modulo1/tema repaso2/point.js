@@ -23,8 +23,17 @@ var Point = /** @class */ (function () {
         var y = this.y;
         return "".concat(x, ",").concat(y);
     };
+    Point.prototype.distanceToOrigin = function () {
+        var x = this.x - 0;
+        var y = this.y - 0;
+        return Math.sqrt(x * x + y * y);
+        // return Math.sqrt(this.x*this.x + this.y*this.y);
+    };
+    Point.prototype.calculateDistance = function (anotherPoint) {
+        var x = this.x - anotherPoint.getX();
+        var y = this.y - anotherPoint.getY();
+        return Math.sqrt(x * x + y * y);
+    };
     return Point;
 }());
 exports.Point = Point;
-var myPoint = new Point(10, 10);
-console.log(myPoint.getX());
