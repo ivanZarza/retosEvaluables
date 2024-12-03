@@ -55,7 +55,19 @@ class Point {
         return 0;
     }
   }
+
+  calculateNearest(points:Point[]): Point{
+    let distancias: number[] = []
+    for(let i = 0; i < points.length; i++){
+      distancias.push(this.calculateDistance(points[i]))
+    }
+    let masPequeño: number = Math.min(...distancias)
+    let indiceCercano: number = distancias.indexOf(masPequeño)
+    return points[indiceCercano]
 }
+}
+
+
 
 export { Point }
 

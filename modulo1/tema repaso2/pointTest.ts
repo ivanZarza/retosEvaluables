@@ -28,3 +28,17 @@ myPoint.setX(10);
 console.log(myPoint.calculateQuadrant());
 myPoint.setY(0);
 console.log(myPoint.calculateQuadrant());
+
+let punto3 = new Point(15, 15);
+let punto4 = new Point(16, 17);
+let punto5 = new Point(18, 19);
+
+let points: Point[] = [punto2, punto3, punto4, punto5]
+
+myPoint.setX(18)
+myPoint.setY(18)
+console.log(myPoint);
+
+let resultadoMasCercano: Point = myPoint.calculateNearest(points)
+console.log(resultadoMasCercano);
+console.log(myPoint.calculateNearest(points));
