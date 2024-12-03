@@ -4,7 +4,8 @@
   "description": "",
   "main": "tema_repaso_evaluable.js",
   "scripts": {
-    "for": "tsc retos1/*.ts --target es5 && node retos1/buclesFor.js"
+    "for": "tsc retos1/*.ts --target es5 && node retos1/buclesFor.js",
+    "while": "tsc retos1/*.ts --target es5 && node retos1/buclesWhile.js"
   },
   "author": "",
   "license": "ISC",
