@@ -18,3 +18,13 @@ console.log(myPoint.distanceToOrigin());
 let punto2 = new Point(10, 10);
 
 console.log(myPoint.calculateDistance(punto2));
+
+console.log(myPoint.calculateQuadrant());
+myPoint.setX(-10);
+console.log(myPoint.calculateQuadrant());
+myPoint.setY(-10);
+console.log(myPoint.calculateQuadrant());
+myPoint.setX(10);
+console.log(myPoint.calculateQuadrant());
+myPoint.setY(0);
+console.log(myPoint.calculateQuadrant());
