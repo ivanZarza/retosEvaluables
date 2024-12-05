@@ -2,6 +2,8 @@ import { Movie } from "./movie.js";
 import { Imdb } from "./imdb.js";
 import { Professional } from "./professional.js";
 
+import { writeFileSync, readFileSync } from 'node:fs';
+
 let manquiña = new Professional('Manuel Manquiña', 71, 84, 1.75, false, 'Española', 0, 'Actor');
 let karraElejalde = new Professional('Karra Elejalde', 60, 85, 1.90, false, 'Española', 0, 'Actor');
 let carlosArguiñano = new Professional('Carlos Arguiñano', 71, 80, 1.35, false, 'Española', 0, 'Actor');
@@ -60,10 +62,28 @@ let peliculas: Movie[] = [airbag, airbag2, airbag3];
 
 let baseDatos = new Imdb(peliculas);
 
-
+// esto creo que no es necesario
 baseDatos.printImdb();
 
-let aJson = JSON.stringify(baseDatos);
+// probando a guardar en un fichero JSON
+let baseDatosAJson = JSON.stringify(baseDatos,null,2);
 
-console.log(aJson);
+writeFileSync('imdbBBDD.json', baseDatosAJson);
 
+//recuperando del fichero JSON
+let recuperarDeImdbBBDD = readFileSync('imdbBBDD.json', 'utf-8');
+
+let recuperarImdb = JSON.parse(recuperarDeImdbBBDD);
+
+let imdbRecuperada = new Imdb(recuperarImdb.peliculas);
+
+console.log(imdbRecuperada.peliculas[1].actors[1].name);
+
+// prueba metodos escribirEnFicheroJSON y obtenerInstanciaIMDB
+
+imdbRecuperada.escribirEnFicheroJSON('imdbBBDD2');
+
+imdbRecuperada.obtenerInstanciaIMDB('imdbBBDD2');
+console.log('imdbRecuperada',imdbRecuperada);
+
+console.log(imdbRecuperada.peliculas[1].actors[1].name);

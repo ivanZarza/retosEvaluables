@@ -5,9 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "professional": "tsc ./*.ts --target es6 && node ./professionalTest.js",
-    "movie": "tsc ./*.ts --target es6 && node ./movieTest.js",
-    "imdbTest": "tsc ./*.ts --target es6 && node ./imdbTest.js"
+    "build": "tsc ./*.ts --target es6 --module nodenext",
+    "professional": "npm run build && node ./professionalTest.js",
+    "movie": "npm run build && node ./movieTest.js",
+    "imdbTest": "npm run build && node ./imdbTest.js",
+    "final": "npm run build && node ./finalTest.js"
+
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "undici": "^5.10.0"
+    "readline-sync": "^1.4.10"
   }
 }

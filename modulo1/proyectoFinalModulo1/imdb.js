@@ -9,11 +9,11 @@ class Imdb {
         });
     }
     escribirEnFicheroJSON(nombreFichero) {
-        let toJson = JSON.stringify(this.peliculas);
+        let toJson = JSON.stringify(this.peliculas, null, 2);
         writeFileSync(`${nombreFichero}.json`, toJson, 'utf-8');
     }
-    obtenerInstanciaIMDB(nombreFichero) {
-        let recuperarImbd = JSON.parse(readFileSync(`${nombreFichero}.json`, 'utf-8'));
+    obtenerInstanciaIMDB(nombreFicheroSinExtension) {
+        let recuperarImbd = JSON.parse(readFileSync(`${nombreFicheroSinExtension}.json`, 'utf-8'));
         return new Imdb(recuperarImbd);
     }
 }

@@ -1,5 +1,5 @@
 import { writeFileSync, readFileSync } from 'fs';
-import { Movie } from "./movie";
+import { Movie } from "./movie.js";
 
 class Imdb {
 
@@ -16,12 +16,12 @@ class Imdb {
   }
 
   public escribirEnFicheroJSON(nombreFichero: string): void {
-    let toJson: string = JSON.stringify(this.peliculas);
+    let toJson: string = JSON.stringify(this.peliculas, null, 2);
     writeFileSync(`${nombreFichero}.json`, toJson, 'utf-8');
   }
 
-  public obtenerInstanciaIMDB(nombreFichero: string): Imdb {
-    let recuperarImbd: Movie[] = JSON.parse(readFileSync(`${nombreFichero}.json`, 'utf-8'));
+  public obtenerInstanciaIMDB(nombreFicheroSinExtension : string): Imdb {
+    let recuperarImbd: Movie[] = JSON.parse(readFileSync(`${nombreFicheroSinExtension}.json`, 'utf-8'));
     return new Imdb(recuperarImbd)
   }
 }

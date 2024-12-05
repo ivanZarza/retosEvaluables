@@ -1,1 +1,403 @@
-{"peliculas":[{"title":"Airbag","releaseYear":1997,"nacionality":"Española","genre":"Comedia","actors":[{"name":"Manuel Manquiña","age":71,"weight":84,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Karra Elejalde","age":60,"weight":85,"height":1.9,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Carlos Arguiñano","age":71,"weight":80,"height":1.35,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Jordi Cruz","age":42,"weight":75,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Maria de Medeiros","age":59,"weight":60,"height":1.58,"isRetired":false,"nationality":"Portuguesa","oscarsNumber":0,"profession":"Actriz"},{"name":"Alberto San Juan","age":51,"weight":99,"height":1.63,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Francisco Rabal","age":75,"weight":105,"height":1.79,"isRetired":true,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Fernando Guillén","age":80,"weight":84,"height":1.45,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Albert Pla","age":135,"weight":77,"height":1.72,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"}],"director":{"name":"Juanma Bajo Ulloa","age":52,"weight":79,"height":1.67,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Director"},"writer":{"name":"Oubiña","age":50,"weight":85,"height":1.75,"isRetired":false,"nationality":"Gallega","oscarsNumber":1,"profession":"Guionista"},"producer":{"name":"Pablo Escobar","age":65,"weight":80,"height":1.75,"isRetired":false,"nationality":"Colombiana","oscarsNumber":1,"profession":"Productor"},"language":"Español","plataforma":"Toilet times","isMCU":false,"mainCharacterName":"Carlos Arguiñano","distributor":"La Vaquinha tiesa"},{"title":"Airbag 2","releaseYear":2022,"nacionality":"Española","genre":"Comedia","actors":[{"name":"Manuel Manquiña","age":71,"weight":84,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Karra Elejalde","age":60,"weight":85,"height":1.9,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Carlos Arguiñano","age":71,"weight":80,"height":1.35,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Jordi Cruz","age":42,"weight":75,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Maria de Medeiros","age":59,"weight":60,"height":1.58,"isRetired":false,"nationality":"Portuguesa","oscarsNumber":0,"profession":"Actriz"},{"name":"Alberto San Juan","age":51,"weight":99,"height":1.63,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Francisco Rabal","age":75,"weight":105,"height":1.79,"isRetired":true,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Fernando Guillén","age":80,"weight":84,"height":1.45,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Albert Pla","age":135,"weight":77,"height":1.72,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"}],"director":{"name":"Juanma Bajo Ulloa","age":52,"weight":79,"height":1.67,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Director"},"writer":{"name":"Oubiña","age":50,"weight":85,"height":1.75,"isRetired":false,"nationality":"Gallega","oscarsNumber":1,"profession":"Guionista"},"producer":{"name":"Pablo Escobar","age":65,"weight":80,"height":1.75,"isRetired":false,"nationality":"Colombiana","oscarsNumber":1,"profession":"Productor"},"language":"Español","plataforma":"Toilet times","isMCU":false,"mainCharacterName":"Carlos Arguiñano","distributor":"La Vaquinha tiesa"},{"title":"Airbag 3","releaseYear":2025,"nacionality":"Española","genre":"Comedia","actors":[{"name":"Manuel Manquiña","age":71,"weight":84,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Karra Elejalde","age":60,"weight":85,"height":1.9,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Carlos Arguiñano","age":71,"weight":80,"height":1.35,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Jordi Cruz","age":42,"weight":75,"height":1.75,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Maria de Medeiros","age":59,"weight":60,"height":1.58,"isRetired":false,"nationality":"Portuguesa","oscarsNumber":0,"profession":"Actriz"},{"name":"Alberto San Juan","age":51,"weight":99,"height":1.63,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Francisco Rabal","age":75,"weight":105,"height":1.79,"isRetired":true,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Fernando Guillén","age":80,"weight":84,"height":1.45,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"},{"name":"Albert Pla","age":135,"weight":77,"height":1.72,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Actor"}],"director":{"name":"Juanma Bajo Ulloa","age":52,"weight":79,"height":1.67,"isRetired":false,"nationality":"Española","oscarsNumber":0,"profession":"Director"},"writer":{"name":"Oubiña","age":50,"weight":85,"height":1.75,"isRetired":false,"nationality":"Gallega","oscarsNumber":1,"profession":"Guionista"},"producer":{"name":"Pablo Escobar","age":65,"weight":80,"height":1.75,"isRetired":false,"nationality":"Colombiana","oscarsNumber":1,"profession":"Productor"},"language":"Español","plataforma":"Toilet times","isMCU":false,"mainCharacterName":"Carlos Arguiñano","distributor":"La Vaquinha tiesa"}]}
+{
+  "peliculas": [
+    {
+      "title": "Airbag",
+      "releaseYear": 1997,
+      "nacionality": "Española",
+      "genre": "Comedia",
+      "actors": [
+        {
+          "name": "Manuel Manquiña",
+          "age": 71,
+          "weight": 84,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Karra Elejalde",
+          "age": 60,
+          "weight": 85,
+          "height": 1.9,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Carlos Arguiñano",
+          "age": 71,
+          "weight": 80,
+          "height": 1.35,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Jordi Cruz",
+          "age": 42,
+          "weight": 75,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Maria de Medeiros",
+          "age": 59,
+          "weight": 60,
+          "height": 1.58,
+          "isRetired": false,
+          "nationality": "Portuguesa",
+          "oscarsNumber": 0,
+          "profession": "Actriz"
+        },
+        {
+          "name": "Alberto San Juan",
+          "age": 51,
+          "weight": 99,
+          "height": 1.63,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Francisco Rabal",
+          "age": 75,
+          "weight": 105,
+          "height": 1.79,
+          "isRetired": true,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Fernando Guillén",
+          "age": 80,
+          "weight": 84,
+          "height": 1.45,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Albert Pla",
+          "age": 135,
+          "weight": 77,
+          "height": 1.72,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        }
+      ],
+      "director": {
+        "name": "Juanma Bajo Ulloa",
+        "age": 52,
+        "weight": 79,
+        "height": 1.67,
+        "isRetired": false,
+        "nationality": "Española",
+        "oscarsNumber": 0,
+        "profession": "Director"
+      },
+      "writer": {
+        "name": "Oubiña",
+        "age": 50,
+        "weight": 85,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Gallega",
+        "oscarsNumber": 1,
+        "profession": "Guionista"
+      },
+      "language": "Español",
+      "plataforma": "Toilet times",
+      "isMCU": false,
+      "mainCharacterName": "Carlos Arguiñano",
+      "producer": {
+        "name": "Pablo Escobar",
+        "age": 65,
+        "weight": 80,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Colombiana",
+        "oscarsNumber": 1,
+        "profession": "Productor"
+      },
+      "distributor": "La Vaquinha tiesa"
+    },
+    {
+      "title": "Airbag 2",
+      "releaseYear": 2022,
+      "nacionality": "Española",
+      "genre": "Comedia",
+      "actors": [
+        {
+          "name": "Manuel Manquiña",
+          "age": 71,
+          "weight": 84,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Karra Elejalde",
+          "age": 60,
+          "weight": 85,
+          "height": 1.9,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Carlos Arguiñano",
+          "age": 71,
+          "weight": 80,
+          "height": 1.35,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Jordi Cruz",
+          "age": 42,
+          "weight": 75,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Maria de Medeiros",
+          "age": 59,
+          "weight": 60,
+          "height": 1.58,
+          "isRetired": false,
+          "nationality": "Portuguesa",
+          "oscarsNumber": 0,
+          "profession": "Actriz"
+        },
+        {
+          "name": "Alberto San Juan",
+          "age": 51,
+          "weight": 99,
+          "height": 1.63,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Francisco Rabal",
+          "age": 75,
+          "weight": 105,
+          "height": 1.79,
+          "isRetired": true,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Fernando Guillén",
+          "age": 80,
+          "weight": 84,
+          "height": 1.45,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Albert Pla",
+          "age": 135,
+          "weight": 77,
+          "height": 1.72,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        }
+      ],
+      "director": {
+        "name": "Juanma Bajo Ulloa",
+        "age": 52,
+        "weight": 79,
+        "height": 1.67,
+        "isRetired": false,
+        "nationality": "Española",
+        "oscarsNumber": 0,
+        "profession": "Director"
+      },
+      "writer": {
+        "name": "Oubiña",
+        "age": 50,
+        "weight": 85,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Gallega",
+        "oscarsNumber": 1,
+        "profession": "Guionista"
+      },
+      "language": "Español",
+      "plataforma": "Toilet times",
+      "isMCU": false,
+      "mainCharacterName": "Carlos Arguiñano",
+      "producer": {
+        "name": "Pablo Escobar",
+        "age": 65,
+        "weight": 80,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Colombiana",
+        "oscarsNumber": 1,
+        "profession": "Productor"
+      },
+      "distributor": "La Vaquinha tiesa"
+    },
+    {
+      "title": "Airbag 3",
+      "releaseYear": 2025,
+      "nacionality": "Española",
+      "genre": "Comedia",
+      "actors": [
+        {
+          "name": "Manuel Manquiña",
+          "age": 71,
+          "weight": 84,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Karra Elejalde",
+          "age": 60,
+          "weight": 85,
+          "height": 1.9,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Carlos Arguiñano",
+          "age": 71,
+          "weight": 80,
+          "height": 1.35,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Jordi Cruz",
+          "age": 42,
+          "weight": 75,
+          "height": 1.75,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Maria de Medeiros",
+          "age": 59,
+          "weight": 60,
+          "height": 1.58,
+          "isRetired": false,
+          "nationality": "Portuguesa",
+          "oscarsNumber": 0,
+          "profession": "Actriz"
+        },
+        {
+          "name": "Alberto San Juan",
+          "age": 51,
+          "weight": 99,
+          "height": 1.63,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Francisco Rabal",
+          "age": 75,
+          "weight": 105,
+          "height": 1.79,
+          "isRetired": true,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Fernando Guillén",
+          "age": 80,
+          "weight": 84,
+          "height": 1.45,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        },
+        {
+          "name": "Albert Pla",
+          "age": 135,
+          "weight": 77,
+          "height": 1.72,
+          "isRetired": false,
+          "nationality": "Española",
+          "oscarsNumber": 0,
+          "profession": "Actor"
+        }
+      ],
+      "director": {
+        "name": "Juanma Bajo Ulloa",
+        "age": 52,
+        "weight": 79,
+        "height": 1.67,
+        "isRetired": false,
+        "nationality": "Española",
+        "oscarsNumber": 0,
+        "profession": "Director"
+      },
+      "writer": {
+        "name": "Oubiña",
+        "age": 50,
+        "weight": 85,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Gallega",
+        "oscarsNumber": 1,
+        "profession": "Guionista"
+      },
+      "language": "Español",
+      "plataforma": "Toilet times",
+      "isMCU": false,
+      "mainCharacterName": "Carlos Arguiñano",
+      "producer": {
+        "name": "Pablo Escobar",
+        "age": 65,
+        "weight": 80,
+        "height": 1.75,
+        "isRetired": false,
+        "nationality": "Colombiana",
+        "oscarsNumber": 1,
+        "profession": "Productor"
+      },
+      "distributor": "La Vaquinha tiesa"
+    }
+  ]
+}

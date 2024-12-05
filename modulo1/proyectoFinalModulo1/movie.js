@@ -1,9 +1,19 @@
+import { Professional } from './professional.js';
 class Movie {
     constructor(title, releaseYear, nacionality, genre) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.nacionality = nacionality;
         this.genre = genre;
+        this.actors = [];
+        this.director = new Professional('', 0, 0, 0, false, '', 0, '');
+        this.writer = new Professional('', 0, 0, 0, false, '', 0, '');
+        this.language = '';
+        this.plataforma = '';
+        this.isMCU = false;
+        this.mainCharacterName = '';
+        this.producer = new Professional('', 0, 0, 0, false, '', 0, '');
+        this.distributor = '';
     }
     setActors(actors) {
         this.actors = actors;
