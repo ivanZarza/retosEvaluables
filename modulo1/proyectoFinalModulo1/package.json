@@ -1,0 +1,21 @@
+{
+  "name": "proyectofinalmodulo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "professional": "tsc ./*.ts --target es6 && node ./professionalTest.js",
+    "movie": "tsc ./*.ts --target es6 && node ./movieTest.js",
+    "imdbTest": "tsc ./*.ts --target es6 && node ./imdbTest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "undici": "^5.10.0"
+  }
+}
