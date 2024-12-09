@@ -20,53 +20,7 @@ class Movie {
     this.releaseYear = releaseYear;
     this.nacionality = nacionality;
     this.genre = genre;
-    this.actors = [];
-    this.director = new Professional('', 0, 0, 0, false, '', 0, '');
-    this.writer = new Professional('', 0, 0, 0, false, '', 0, '');
-    this.language = '';
-    this.plataforma = '';
-    this.isMCU = false;
-    this.mainCharacterName = '';
-    this.producer = new Professional('', 0, 0, 0, false, '', 0, '');
-    this.distributor = '';
-    
-  }
-
-  setActors(actors: Professional[]): void {
-    this.actors = actors;
-  }
-
-  setDirector(director: Professional): void {
-    this.director = director;
-  }
-
-  setWriter(writer: Professional): void {
-    this.writer = writer;
-  }
-
-  setLanguage(language: string): void {
-    this.language = language;
-  }
-
-  setPlataforma(plataforma: string): void {
-    this.plataforma = plataforma;
-  }
-
-  setIsMCU(isMCU: boolean): void {
-    this.isMCU = isMCU;
-  }
-
-  setMainCharacterName(mainCharacterName: string): void {
-    this.mainCharacterName = mainCharacterName;
-  }
-
-  setProducer(producer: Professional): void {
-    this.producer = producer;
-  }
-
-  setDistributor(distributor: string): void {
-    this.distributor = distributor;
-  }
+  }   
 
   printMovie(): void {
     console.log(`TITLE: ${this.title},\nRELEASE YEAR: ${this.releaseYear},\nNACIONALITY: ${this.nacionality},\nGENRE: ${this.genre},\nACTORS: ${this.actors.map(actor => actor.name).join(', ')},\nDIRECTOR: ${this.director.name},\nWRITER: ${this.writer.name},\nLANGUAGE: ${this.language},\nPLATAFORMA: ${this.plataforma},\nIS MCU: ${this.isMCU},\nMAIN CHARACTER NAME: ${this.mainCharacterName},\nPRODUCER: ${this.producer.name},\nDISTRIBUTOR: ${this.distributor}`);
