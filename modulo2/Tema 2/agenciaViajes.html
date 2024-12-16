@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="agenciaViajes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#presentacion ">¿Quienes somos?</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 class="nombre_agencia">Agencia de Viajes <span>Lo voy a dar todo</span></h1>
+  <section id="presentacion">
+  <div class="presentacion">
+    <div class="texto">
+  <h2>¿Quienes somos?</h2>
+  <p>Somos una agencia de viajes que se dedica a ofrecer los mejores destinos y paquetes turísticos para que puedas disfrutar de tus vacaciones al máximo. Dinos lo que te apetece hacer y buscaremos el lugar ideal para ti y los tuyos. Aventura, relax, fiesta, lugares paradisiacos o cimas de montañas, cualquier cosa a tu alcanze</p>
+</div>
+<div class="imagen">
+  <img src="imagenes/pareja montaña.jpg" alt="imagen de una pareja en la montaña">
+</div>
+  </div>
+</section>
+  <section id="destinos">
+    <h2>Destinos</h2>
+    <ul>
+      <li>
+        <img src="imagenes/brazil.jpg" alt="mallorca">
+        <h3>Mallorca</h3>
+        <p>El destino magico de las Baleares</p>
+        <button onclick="desplegarInformacion('Mallorca')">Ver más</button>
+      </li>
+      <li>
+        <img src="imagenes/hawaii.jpg" alt="Galicia">
+        <h3>Galicia</h3>
+        <p>Galifornia a tus manos</p>
+        <button onclick="desplegarInformacion('Galicia')" >Ver más</button>
+      </li>
+      <li>
+        <img src="imagenes/panama.jpg" alt="Cadiz">
+        <h3>Cadiz</h3>
+        <p>El parariso</p>
+        <button onclick="desplegarInformacion('Cadiz')">Ver más</button>
+      </li>
+      <li>
+        <img src="imagenes/jamaica.jpg" alt="Canarias">
+        <h3>Canarias</h3>
+        <p>Las islas que enamoran</p>
+        <button onclick="desplegarInformacion('Canarias')">Ver más</button>
+      </li>
+    </ul>
+  </section>
+
+  <section class="desplegable" ></section>
+
+  <section id="reservas">
+    <h2>Reservas</h2>
+    <form action="">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre">
+      <label for="origen">Origen:</label>
+      <input type="text" id="origen">
+      <label for="destino">Destino:</label>
+      <input type="text" id="destino">
+      <label for="numeroPersonas">Número de personas:</label>
+      <input type="number" id="numeroPersonas" min="1">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono">
+      <button id="informacion" onclick="agregarPersona()">Informacion</button>
+      <button onclick="filtrar()">Filtrado</button>
+    </form>
+  </section>
+  <div id="reservasHechas"></div>
+</main>
+<script src="agenciaViajes.js"></script>
+</body>
+</html>
