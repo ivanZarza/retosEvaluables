@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-image: url('imagenes/film-3057394_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  margin: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 15px;
+}
+
+main {
+  background-image: url(imagenes/istockphoto-1211536146-1024x1024.jpg);
+  background-size: contain;
+  background-clip: content-box;
+  color: white;
+  padding: 20px;
+  height: 100%;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  height: 80%;
+}
+
+.imagen {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 20px;
+}
+
+p {
+  font-size: 1.8rem;
+  margin: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+
+  header {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    padding: 0;
+  }
+
+  .imagen {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.322);
+  }
+
+  .fondo {
+    position: relative;
+    z-index: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  main {
+    background-image:  repeat;
+  }
+
+
+.texto {
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.548);
+}
+.relleno{
+  height: 80%
+};
+}

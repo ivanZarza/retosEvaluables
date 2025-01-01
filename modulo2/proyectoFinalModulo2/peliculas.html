@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="peliculas.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="fondo">
+        <h1>Catalogo de peliculas y profesionales</h1>
+        <div class="nav">
+          <nav>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="peliculas.html">Peliculas</a></li>
+              <li><a href="profesionales.html">Profesionales</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="portada">
+        <div class="texto">
+          <h2>Bienvenido a tu catalogo de peliculas</h2>
+        </div>
+        <div class="pelicula" id="pelicula"></div>
+  </section>
+  <section>
+    <div class="formulario">
+      <h2>Agregar Película</h2>
+      <form id="formulario-peliculas">
+        <label><span>Titulo</span><input type="text" id="title" placeholder="Título" required></label>
+        <label><span>Año de lanzamiento</span><input type="number" id="releaseYear" placeholder="Año de lanzamiento" required></label>
+        <label><span>Nacionalidad</span><input type="text" id="nacionality" placeholder="Nacionalidad" required></label>
+        <label><span>Género</span><input type="text" id="genre" placeholder="Género" required></label>
+        <label><span>Idioma</span><input type="text" id="language" placeholder="Idioma" required></label>
+        <label><span>Plataforma</span><input type="text" id="plataforma" placeholder="Plataforma" required></label>
+        <label><span>Es del UCM</span><input type="checkbox" id="isMCU" class="checkbox"></label>
+        <label><span>Protagonista</span><input type="text" id="mainCharacterName" placeholder="Protagonista" required></label>
+        <label><span>Productor</span><input type="text" id="producer" placeholder="Productor" required></label>
+        <label><span>Distribuidor</span><input type="text" id="distributor" placeholder="Distribuidor" required></label>
+        <label><span>URL de la imagen</span><input type="url" id="photo" placeholder="URL de la imagen" required></label>
+        <button type="submit" onclick="crearPelicula(event)" >Agregar Película</button>
+      </form>
+    </div>
+    <div id="peliculas"></div>
+  </section>
+  </main>
+  </div>
+</body>
+<script type="module" src="peliculas.js"></script>
+
+</html>
