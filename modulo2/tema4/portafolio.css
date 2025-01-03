@@ -1,0 +1,188 @@
+* {  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  min-width: 100vw;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.nombre {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  min-width: 300px;
+}
+
+.nombre h1 {
+  font-size: 4rem;
+  color: #333;
+  padding: 10px 20px;
+}
+
+.nombre h2 {
+  font-size: 2rem;
+  color: #666;
+  padding: 0px 20px;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.texto {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-width: 300px;
+  margin: 10px;
+  gap:50px;
+}
+
+.texto h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+
+.texto p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.texto h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.texto span {
+  transition: font-size 0.5s ease;
+}
+
+.texto:hover  span {
+  font-size: 4rem;
+}
+
+.imagen {
+  width: 50%;
+  min-width: 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 1.5s ease, box-shadow 0.1s ease;
+}
+
+img:active {
+  transform: rotateY(720deg);
+  box-shadow: 0 0 50px rgb(255, 251, 0);
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+@media (max-width: 800px) {
+
+  nav ul li {
+    font-size: 0.7rem;
+  }
+
+  .nombre h1 {
+    font-size: 2.5rem;
+  }
+
+  .nombre h2 {
+    font-size: 1.5rem;
+  }
+
+  article {
+    flex-direction: column;
+  }
+
+  .texto {
+    width: 80%;
+  }
+
+  .texto h1 {
+    font-size: 1.5rem;
+  }
+
+  .texto p {
+    font-size: 1rem;
+  }
+
+  .texto h3 {
+    font-size: 1rem;
+  }
+
+  .imagen {
+    width: 80%;
+  }
+}
