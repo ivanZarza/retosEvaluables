@@ -44,7 +44,8 @@ h1 {
 main {
   color: white;
   padding: 20px;
-  height: 100%;
+  height: 100VH;
+
 }
 
 .portada {
@@ -52,16 +53,13 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url(imagenes/focos.jpg);
-  background-size: cover;
-  background-clip: content-box;
 }
 
 .texto {
   font-size: 2.5rem;
-text-align: center;
-color: black;
-margin: 20px;
+  text-align: center;
+  color: black;
+  margin: 20px;
 }
 
 .contenedor {
@@ -69,10 +67,14 @@ margin: 20px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 20px 0px;
+  padding: 30px;
   gap: 20px;
-
+  background-image: url(imagenes/focos.jpg);
+  background-size: cover;
+  background-position: center;
 }
-  
+
 .pelicula {
   display: flex;
   flex-wrap: wrap;
@@ -111,18 +113,18 @@ img {
     font-size: 2rem;
   }
 
-.texto {
-  font-size: 1.5rem;
-}
+  .texto {
+    font-size: 1.5rem;
+  }
 
-.pelicula{
-  width: 100%;
-  justify-content: space-around;
-}
+  .pelicula {
+    width: 100%;
+    justify-content: space-around;
+  }
 
-.datos {
-  gap: 10px;
-}
+  .datos {
+    gap: 10px;
+  }
 
   img {
     width: 80%;
@@ -135,7 +137,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 50%;
-padding: 50px;
+  padding: 50px;
   color: black;
 }
 
@@ -159,7 +161,7 @@ label {
   gap: 10px;
 }
 
-.formulario input{
+.formulario input {
   padding: 10px;
   font-size: 1rem;
 }
@@ -177,18 +179,31 @@ label {
   height: 60%;
 }
 
+button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.781);
+}
+
 @media (max-width: 768px) {
 
   header h1 {
     font-size: 1.5rem;
   }
 
-.texto {  
-  font-size: 1.5rem;
-}
+  .texto {
+    font-size: 1.5rem;
+  }
+
   .datos {
     font-size: 0.7rem;
-  gap: 5px;
+    gap: 5px;
   }
 
   img {
@@ -202,26 +217,26 @@ label {
     font-size: 1.2rem;
   }
 
-.texto {  
-  font-size: 1rem;
-}
+  .texto {
+    font-size: 1rem;
+  }
 
-.pelicula {
-  width: 100%;
-  display: flex;
+  .pelicula {
+    width: 100%;
+    display: flex;
 
-  justify-content: center;
-  align-items: center;
-}
+    justify-content: center;
+    align-items: center;
+  }
 
   .datos {
     font-size: 0.6rem;
-  gap: 5px;
+    gap: 5px;
   }
 
-.datos h1 {
-  font-size: 1.5rem;
-}
+  .datos h1 {
+    font-size: 1.5rem;
+  }
 
   img {
     width: 70%;
@@ -229,33 +244,33 @@ label {
 }
 
 @media (max-width: 320px) {
-.texto {  
-  font-size: 0.7rem;
-}
+  .texto {
+    font-size: 0.7rem;
+  }
 
-.pelicula {
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-}
+  .pelicula {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 
   .datos {
     font-size: 0.5rem;
-  gap: 5px;
+    gap: 5px;
   }
 
-.datos h1 {
-  font-size: 1rem;
-}
-
-.imagen {
-  width: 100%;
-  
-
-  img {
-    width: 80%;
+  .datos h1 {
+    font-size: 1rem;
   }
-}
+
+  .imagen {
+    width: 100%;
+
+
+    img {
+      width: 80%;
+    }
+  }
 }
