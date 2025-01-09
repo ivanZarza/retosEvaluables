@@ -1,4 +1,4 @@
-import { Professional } from './professional.js';
+
 const profesionales = [];
 const profesional1 = new Professional('Scarlett Johansson', 45, 65, 1.65, false, 'Estadounidense', 23, 'Actriz', 'https://pics.filmaffinity.com/scarlett_johansson-036969395704449-nm_200.jpg');
 const profesional2 = new Professional('Megan Fox', 34, 52, 1.63, false, 'Estadounidense', 23, 'Actriz', 'https://hips.hearstapps.com/hmg-prod/images/megan-fox-drogas-ayahuasca-experiencia-1626191416.jpg');

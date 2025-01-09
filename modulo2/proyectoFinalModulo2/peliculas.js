@@ -1,5 +1,4 @@
-import { Movie } from './movie.js';
-import { Professional } from './professional.js';
+
 const peliculas = [];
 const profesionales = [];
 let pintarPeliculas = document.getElementById('peliculas');

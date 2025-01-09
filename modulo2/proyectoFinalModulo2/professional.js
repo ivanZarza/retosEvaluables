@@ -14,4 +14,4 @@ class Professional {
         console.log(`NAME: ${this.name},\nAGE: ${this.age},\nWEIGHT: ${this.weight},\nHEIGHT: ${this.height},\nIS RETIRED: ${this.isRetired},\nNATIONALITY: ${this.nationality},\nOSCARS NUMBER: ${this.oscarsNumber},\nPROFESSION: ${this.profession}`);
     }
 }
-export { Professional };
+
