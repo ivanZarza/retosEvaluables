@@ -1,8 +1,8 @@
 import { Professional } from './professional.js';
 import { Movie } from './movie.js';
-const actor = new Professional('John Doe', 30, 70, 180, false, 'American', 2, 'Actor', 'photo.jpg');
-const director = new Professional('Jane Smith', 45, 65, 170, false, 'British', 1, 'Director', 'photo.jpg');
-const movie = new Movie('The Movie', 2021, 'American', 'Action', [actor], director, director, 'English', 'Netflix', false, 'John Doe', 'Producer', 'Distributor', 'photo.jpg');
+const actor = new Professional('Scarlett Johansson', 45, 65, 1.65, false, 'Estadounidense', 23, 'Actriz', 'https://pics.filmaffinity.com/scarlett_johansson-036969395704449-nm_200.jpg');
+const director = new Professional('Megan Fox', 34, 52, 1.63, false, 'Estadounidense', 23, 'Actriz', 'https://hips.hearstapps.com/hmg-prod/images/megan-fox-drogas-ayahuasca-experiencia-1626191416.jpg');
+const movie = new Movie('The Movie', 2021, 'American', 'Action', [actor], director, director, 'English', 'Netflix', false, 'spielberg', 'Producer', 'Distributor', 'photo.jpg');
 actor.printProfessional();
 director.printProfessional();
 console.log('---------------------------------');
