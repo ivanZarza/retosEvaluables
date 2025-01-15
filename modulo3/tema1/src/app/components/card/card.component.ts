@@ -18,8 +18,8 @@ export class CardComponent {
 
   constructor() { }
 
-  borrarLibro(posicion: number) {
-    this.libroABorrar.emit(posicion);
+  borrarLibro() {
+    this.libroABorrar.emit(this.bookDesdePadre.id_book);
   }
 
   ngOnInit() {
