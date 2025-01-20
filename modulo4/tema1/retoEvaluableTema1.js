@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-/* const objetoAMano = {
+const objetoAMano = {
   name: 'Laura',
   surname: 'Risitas',
   age: 29
@@ -12,22 +12,22 @@ function escribirArchivo() {
     if (err) {
       console.error(err);
     } else {
-      console.log('Archivo creado');
+      fs.readFile('reto1.json', 'utf8', (err, data) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(data);
+        }
+      }
+      );
     }
   });
-  fs.readFile('reto1.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(data);
-    }
-  } 
-  );
+
 }
 
-escribirArchivo(); */
+escribirArchivo();
 
-const readline = require('node:readline');
+/* const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
 
 
@@ -56,17 +56,18 @@ function rellenarObjeto() {
           if (err) {
             console.error(err);
           } else {
-            console.log('Archivo creado');
-          }
-        });
-
-        fs.readFile('reto2.json', 'utf8', (err, data) => {
+                       console.log('Archivo creado');
+                   fs.readFile('reto2.json', 'utf8', (err, data) => {
           if (err) {
             console.error(err);
           } else {
             console.log(data);
           }
         });
+          }
+        });
+
+
         rl.close();
       });
     });
@@ -76,3 +77,4 @@ function rellenarObjeto() {
 
 rellenarObjeto();
 
+ */
