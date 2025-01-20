@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const objetoAMano = {
+/* const objetoAMano = {
   name: 'Laura',
   surname: 'Risitas',
   age: 29
@@ -25,9 +25,9 @@ function escribirArchivo() {
 
 }
 
-escribirArchivo();
+escribirArchivo(); */
 
-/* const readline = require('node:readline');
+const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
 
 
@@ -75,4 +75,3 @@ function rellenarObjeto() {
 
 rellenarObjeto();
 
- */
