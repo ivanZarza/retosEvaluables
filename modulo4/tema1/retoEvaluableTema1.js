@@ -56,8 +56,8 @@ function rellenarObjeto() {
           if (err) {
             console.error(err);
           } else {
-                       console.log('Archivo creado');
-                   fs.readFile('reto2.json', 'utf8', (err, data) => {
+            console.log('Archivo creado');
+            fs.readFile('reto2.json', 'utf8', (err, data) => {
           if (err) {
             console.error(err);
           } else {
@@ -66,8 +66,6 @@ function rellenarObjeto() {
         });
           }
         });
-
-
         rl.close();
       });
     });
