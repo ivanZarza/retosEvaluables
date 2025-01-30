@@ -65,7 +65,7 @@ async function postEmail(req, res) {
       TextBody: email.message
     }
 console.log(body);
-console.log(headers);
+console.log(params);
   try {
     let response = await axios.post(urlPostMark,body, params);
     emails.push(email);
@@ -73,7 +73,7 @@ console.log(headers);
     console.log(emails);
     res.status(200).json({ ok: true, message: "Exito!!", data: email });
   } catch (error) {
-    console.error("Error al enviar el email:", error.message);
+
     res.status(500).json({ ok: false, message: error.message });
   }
 }
