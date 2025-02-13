@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 let express = require('express');
-const { User, Profile, Credentials, Photo } = require('./schemasMongo/modelos');
+const { User, Profile, Credentials } = require('./schemasMongo/modelos');
 
 
 async function conectarMongoDB() {

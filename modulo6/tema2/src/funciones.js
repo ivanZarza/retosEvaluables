@@ -1,3 +1,5 @@
+const { Photo } = require('./schemasMongo/modelos');
+
 async function insertarDocumento(documento) {
   try {
     const document = await documento.save();

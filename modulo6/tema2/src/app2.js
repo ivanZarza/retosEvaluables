@@ -1,9 +1,10 @@
 let mongoose = require('mongoose');
-const { Teacher, Subject, Mark, Student } = require('./modelosEscenarioDeTrabajo');
+const { insertarDocumento, obtenerFotos, modificarFoto, eliminarFoto, eliminarTodasLasFotos } = require('./funciones');
+const { Photo } = require('./schemasMongo/modelos');
 
 async function conectarMongoDB() {
   try {
-    await mongoose.connect('mongodb+srv://ivanzarzaestevez:57C14Xff6ygoMFUv@cluster1.5cd1v.mongodb.net/Escenario_de_trabajo');
+    await mongoose.connect('mongodb+srv://ivanzarzaestevez:57C14Xff6ygoMFUv@cluster1.5cd1v.mongodb.net/codenotch');
     console.log('Conectado a MongoDB');
   } catch (err) {
     console.error('Error al conectar a MongoDB', err);
@@ -12,43 +13,35 @@ async function conectarMongoDB() {
 
 conectarMongoDB();
 
-const teacher1 = new Teacher({
-  firstName: 'Ivan',
-  lastName: 'Zarza',
-  groups: ['Matematicas', 'Ciencias']
+let documentoPhoto = new Photo({
+  userName: 'Ivan',
+  image: 'http://www.example.com/foto1.jpg',
+  title: 'Foto de la playa',
+  description: 'Foto de la playa de la maravillosa',
 });
 
-const teacher2 = new Teacher({
-  firstName: 'Nico',
-  lastName: 'Zarza',
-  groups: ['Matematicas', 'Historia']
+let documentoPhoto1 = new Photo({
+  userName: 'Ivan',
+  image: 'http://www.example.com/foto2.jpg',
+  title: 'Foto de la playa',
+  description: 'Foto de la playa de la maravillosa',
 });
 
-const subject1 = new Subject({
-  title: 'Matematicas',
-  teachers: [teacher1, teacher2]
+
+let documentoPhoto3 = new Photo({ 
+  userName: 'Ivan',
+  image: 'http://www.example.com/foto3.jpg',
+  title: 'Foto de la playa calla',
+  description: 'Foto de la playa de la maravillosa',
 });
 
-const mark1 = new Mark({
-  date: new Date('2021-01-01'),
-  mark: 8,
-  subject: subject1
-});
+// insertarDocumento(documentoPhoto3);
 
-const student1 = new Student({
-  firstName: 'Ivan',
-  lastName: 'Zarza',
-  group: 'Matematicas',
-  marks: [mark1]
-});
+// obtenerFotos('Ivan');
 
-async function insertarDocumento(documento) {
-  try {
-    const document = await documento.save();
-    console.log(document);
-  } catch (err) {
-    console.log(err);
-  }
-}
+// modificarFoto('Foto de la playa calla', 'Foto de la playa ');
 
-insertarDocumento(student1);
+// eliminarFoto('Ivan', 'Foto de la playa calla');
+
+eliminarTodasLasFotos('Ivan');
+
