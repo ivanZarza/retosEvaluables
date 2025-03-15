@@ -9,11 +9,13 @@ function App() {
   return (
 
     <>
+    <div className="flex flex-col justify-between h-screen w-dvw">
+      <Header />
       <main>
-        <Header />
         <BooksPage />
-        <Footer />
       </main>
+      <Footer />
+      </div>
     </>
   )
 }

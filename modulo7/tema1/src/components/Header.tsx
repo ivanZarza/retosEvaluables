@@ -5,9 +5,8 @@ import Menu from "./Menu";
 function Header() {
   return (
     <>
-      <header >
+      <header className="w-full flex justify-between bg-teal-300  items-center">
         <Logo />
-
         <Menu />
       </header>
     </>
