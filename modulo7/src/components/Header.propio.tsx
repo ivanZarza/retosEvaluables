@@ -1,3 +1,4 @@
+// MI FORMA PERSONAL PASANDO CLASES POR TERNARIO Y SIN CREAR SIDEBAR
 import Logo from "./Logo";
 import Menu from "./Menu";
 import { useState } from "react";
