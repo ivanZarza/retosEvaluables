@@ -1,14 +1,9 @@
 
 function Logo() {
-  return (
-    <>
-    <div className="border-r-2 border-black">
-      <img src="/logazo.webp" alt="logo" 
-      className="size-35 "
-      />
-      </div>
-    </>
-  );
+  return <img src="/logazo.webp" alt="logo" 
+    className="size-24
+    sm:size-35 "
+  />
 }
 
 export default Logo;

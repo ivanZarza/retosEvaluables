@@ -20,15 +20,27 @@ function BookItem(props: BookItemsProps) {
 
   return (
     <>
-      <section className="w-full flex flex-col gap-4 items-center border-1 bg-indigo-100">
+      <section className="w-full max-w-65  flex flex-col justify- gap-4 items-center border-1 bg-indigo-100
+                          md:min-h-[615px]
+                          lg:min-h-[615px]
+                            ">
         <img src={book.photo} alt="Portada del libro El Hobbit" className="size w-65" />
 
           <div className="w-full flex items-start justify-start">
-        <h1 className="text-3xl px-3">{book.title}</h1>
+        <h1 className="text-3xl px-3  
+                        md:text-xl
+                        lg:text-[1.5rem] font-bold
+                        ">{book.title}</h1>
         </div>
         <div className="w-full flex justify-between items-center p-2">
-          <h4 className='text-[1.3rem]'>{book.author}</h4>
-          <p className='bg-blue-300 px-3 py-1 rounded-full'>{book.type}</p>
+          <h4 className=' text-[1.2rem]
+                          md:text-[1rem]
+                          lg:text-[1.2rem]
+          '>{book.author}</h4>
+          <p className="bg-blue-300 flex  px-3 py-1 rounded-full 
+                          md:text-[0.7rem]
+                          lg:text-[1rem]
+          ">{book.type}</p>
         </div>
           <div className="w-full flex justify-between items-center p-2 text-[1rem]">
           <p>{book.price}€</p>
