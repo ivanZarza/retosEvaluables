@@ -52,4 +52,9 @@ button:hover {
   a:hover {
     color: #747bff;
   }
+
+  .active{
+    color: black;
+    text-decoration: underline;
+  }
 }

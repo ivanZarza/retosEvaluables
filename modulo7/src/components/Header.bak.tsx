@@ -1,13 +1,13 @@
-// MI FORMA PERSONAL PASANDO CLASES POR TERNARIO Y SIN CREAR SIDEBAR
 import Logo from "./Logo";
 import Menu from "./Menu";
 import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
   
   const [mostrarMenu, setMostrarMenu] = useState(false);
 
-  const toggleMenu = () => setMostrarMenu(!mostrarMenu);
+  const cambiarMenu = () => setMostrarMenu(!mostrarMenu);
 
   return (
     <>
@@ -16,7 +16,7 @@ function Header() {
                           ">
         <div className="flex justify-between">
           <Logo />
-          <button onClick={toggleMenu} className="sm:hidden"><img src="" alt="" /></button>
+          <button onClick={cambiarMenu} className="sm:hidden"><GiHamburgerMenu size={52}/></button>
         </div>
         <div className={`${mostrarMenu ? 'block' : 'hidden'}
                         sm:block
