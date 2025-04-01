@@ -1,8 +1,8 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
-import PrivateRoutes from './components/PrivateRoutes';
-import PublicRoutes from './components/PublicRoutes';
+import PrivateRoutes from './components/routes/PrivateRoutes';
+import PublicRoutes from './components/routes/PublicRoutes';
 import BooksPage from './pages/BooksPage'
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -20,7 +20,7 @@ function App() {
   return <>
     <div className='flex min-h-screen flex-col justify-between'>
       <Header />
-      <main className='grow '>
+      <main className='grow flex '>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route element={<PrivateRoutes />} >

@@ -8,4 +8,11 @@ type Book= {
   type: 'Tapa dura' | 'Tapa blanda'
 }
 
-export type {Book};
+type inputLibroProps = {
+  name: string,
+  type: string,
+  placeholder: string,
+  value: string | number | boolean
+}
+
+export type {Book, inputLibroProps};

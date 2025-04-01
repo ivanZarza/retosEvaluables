@@ -1,4 +1,4 @@
-import { Book } from '../config/type'
+import { Book } from '../configs/type'
 import { TbTrashFilled } from "react-icons/tb";
 import { RiEditLine } from "react-icons/ri";
 

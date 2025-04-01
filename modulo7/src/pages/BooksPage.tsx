@@ -1,5 +1,6 @@
 import BookItem from '../components/BookItem'
-import { Book } from '../config/type' 
+import Heading from '../components/layouts/HeadingComponent'
+import { Book } from '../configs/type' 
 
 function BooksPage() {
 
@@ -33,13 +34,8 @@ function BooksPage() {
 
   const listBooks = [book,book2,book3]
   return (
-    <div className='w-full flex flex-col items-center justify-start gap-20 p-5'>
-      <div >
-      <h1 className=' text-4xl text-center
-                      md:text-5xl
-                      lg:text-6xl'
-      >Books</h1>
-      </div>
+    <div className='w-full flex flex-col items-center border-2'>
+      <Heading level='h1' title='TUS LIBROS'/>
       <ul className='flex flex-col gap-6 justify-center items-center
                       sm:grid sm:grid-cols-1 sm:gap-8
                       md:grid-cols-2 md:gap-12
