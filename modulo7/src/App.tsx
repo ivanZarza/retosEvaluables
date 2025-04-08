@@ -20,7 +20,7 @@ function App() {
   return <>
     <div className='flex min-h-screen flex-col justify-between'>
       <Header />
-      <main className='grow flex '>
+      <main className='grow flex bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300'>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route element={<PrivateRoutes />} >

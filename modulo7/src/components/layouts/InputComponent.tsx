@@ -6,37 +6,45 @@ type InputProps = {
   placeholder: string
   name: string
   type: string
-  recuperarDatos: ( name: string, value: string | number | boolean ) => void
+  pattern: string
+  error: { [key: string]: boolean }
+  recuperarDatos: (name: string, value: string | number | boolean) => void
+  validarDatos: (name: string, value: string | number | boolean) => void
+  generarMensajeError: (name: string, value: string | number | boolean | undefined) => string
 }
 
 
 function InputComponent(props: InputProps) {
 
   const inputRef = useRef<HTMLInputElement>(null);
-  
+  const [activo, setActivo] = useState<boolean>(false);
 
-  const [activo, setActivo] = useState(false);
-
-const error= ''
+  const valido = !props.error[props.name] || false;
 
   return (
-    <div className="w-full flex bg-gray-200 border-2 pl-1.5 border-teal-500  flex-col justify-between focus:outline-none">
+    <div className={`w-full flex border-2 pl-1.5  flex-col justify-between focus:outline-none ${valido ? "bg-gray-200 border-teal-500 " : "bg-red-100 border-red-600"}`}>
       <label>{activo ? `${props.placeholder}` : ''}</label>
-      <input 
-        className="h-10 placeholder:text-2xl focus:outline-none text-2xl placeholder-gray-500 "
+      <input
+        className="h-10 placeholder:text-2xl focus:outline-none text-2xl placeholder-gray-600 "
         type={props.type}
         placeholder={props.placeholder}
         name={props.name}
         ref={inputRef}
+        pattern={props.pattern}
         onFocus={() => setActivo(true)}
         onBlur={() => setActivo(false)}
-        onChange={(event) => props.recuperarDatos(event.target.name, event.target.value)
-/*             props.type === 'checkbox'
-            ? (event) => props.recuperarDatos(event.target.name, event.target.checked)
-            : (event) => props.recuperarDatos(event.target.name, event.target.value) */
-        } 
+        onChange={(event) => {
+          props.recuperarDatos(event.target.name, event.target.value);
+          props.validarDatos(event.target.name, event.target.value);
+        }
+        }
+      /*     props.type === 'checkbox'
+                  ? (event) => props.recuperarDatos(event.target.name, event.target.checked)
+                  : (event) => props.recuperarDatos(event.target.name, event.target.value) */
       />
-      <p>{error ? `${error}` : ''}</p>
+
+      {!valido && <p className='text-red-600'>{props.generarMensajeError(props.name, inputRef.current?.value)}</p>}
+
     </div>
   );
 }
