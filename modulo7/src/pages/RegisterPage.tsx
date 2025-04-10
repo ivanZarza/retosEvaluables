@@ -2,6 +2,7 @@ import Heading from "../components/layouts/HeadingComponent";
 import FormComponent from "../components/layouts/FormComponent";
 import InputComponent from "../components/layouts/InputComponent";
 import { useState } from "react";
+import axios from "axios";
 
 type inputLibroProps = {
   name: string,
@@ -22,11 +23,11 @@ function RegisterPage() {
       pattern: '^.{4,8}$',
     },
     {
-      name: 'lastName',
+      name: 'last_name',
       type: 'text',
       placeholder: 'Apellidos',
       value: '',
-      pattern: '^.{4,8}$',
+      pattern: '^.{4,20}$',
     },
     {
       name: 'email',
@@ -40,7 +41,7 @@ function RegisterPage() {
       type: 'text',
       placeholder: 'URL de la foto',
       value: '',
-      pattern: '^.{4,8}$',
+      pattern: '^.{4,200}$',
     },
     {
       name: 'password1',
@@ -60,7 +61,7 @@ function RegisterPage() {
 
   const [error, setError] = useState<{ [name: string]: boolean }>({
     name: false,
-    lastName: false,
+    last_name: false,
     email: false,
     photo: false,
     password: false,
@@ -93,7 +94,7 @@ function RegisterPage() {
         return 'El nombre debe tener entre 4 y 8 caracteres';
       }
 
-      case 'lastName': {
+      case 'last_name': {
         if (!value) return 'El apellido es obligatorio';
         return 'El apellido debe tener entre 4 y 8 caracteres';
       }
@@ -126,11 +127,28 @@ function RegisterPage() {
     return '';
   }
 
+async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const nuevoUsuario = {
+      name: datosRegistro[0].value,
+      last_name: datosRegistro[1].value,
+      email: datosRegistro[2].value,
+      photo: datosRegistro[3].value,
+      password: datosRegistro[4].value,
+    };
+    console.log(nuevoUsuario)
+
+    const response = await axios.post("https://api-books-xi.vercel.app/register", nuevoUsuario,)
+
+  console.log(response.status);
+
+  }
+
 
   return <>
     <div className="w-full  flex flex-col  items-center  border-2" >
       <Heading level="h1" title="RELLENA TUS DATOS" />
-      <FormComponent>
+      <FormComponent onSubmit={handleSubmit} >
         {
           datosRegistro.map((input) => (
             <InputComponent

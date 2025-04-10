@@ -2,6 +2,7 @@ import Heading from "../components/layouts/HeadingComponent";
 import FormComponent from "../components/layouts/FormComponent";
 import InputComponent from "../components/layouts/InputComponent";
 import { useState } from "react";
+import axios from "axios";
 
 type inputLibroProps = {
   name: string,
@@ -75,10 +76,24 @@ function LoginPage() {
     return '';
   }
 
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const datosUsuario = {
+      email: datosLogin[0].value,
+      password: datosLogin[1].value,
+    };
+    console.log(datosUsuario)
+
+    const response = await axios.post("https://api-books-xi.vercel.app/login", datosUsuario,)
+
+  console.log(response.status);
+
+  }
+
     return <>
       <div className="w-full  flex flex-col  items-center  border-2 ">
         <Heading level="h1" title="INTRODUCE TUS DATOS" />
-        <FormComponent >
+        <FormComponent onSubmit={handleSubmit} >
           {datosLogin.map(input => (
             <InputComponent
               key={input.name}

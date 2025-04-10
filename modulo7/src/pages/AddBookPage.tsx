@@ -18,6 +18,28 @@ type inputLibroProps = {
   placeholder: string;
 };
 
+async function newBook(book: FormValues) {
+  const bookConUsuario = {
+    id_user: 5, 
+    ...book,
+  };
+  console.log('bookConUsuario', bookConUsuario);
+  const url= await fetch('https://api-books-xi.vercel.app/books', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify({book: bookConUsuario})
+  });
+  if (!url.ok) {
+    throw new Error('Error en la solicitud');
+  }
+  const response = await url
+  const data = await response.json();
+  console.log('respuesta', data);
+}
+
 function AddBook() {
 
   const { register, handleSubmit, formState: { errors }, } = useForm<FormValues>({
@@ -28,7 +50,9 @@ function AddBook() {
 
   function onSubmit(data: FormValues) {
     console.log('datos', data);
+      newBook(data);
   }
+
 
   const datosUsuario: inputLibroProps[] = [
     {
