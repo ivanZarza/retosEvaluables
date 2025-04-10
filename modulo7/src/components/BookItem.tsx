@@ -24,7 +24,7 @@ function BookItem(props: BookItemsProps) {
                           md:min-h-[615px]
                           lg:min-h-[615px]
                             ">
-        <img src={book.photo} alt="Portada del libro El Hobbit" className="size w-65" />
+        <img src={book.photo} alt="Portada del libro El Hobbit" className=" h-[200px] w-auto object-cover" />
 
           <div className="w-full flex items-start justify-start">
         <h1 className="text-3xl px-3  
