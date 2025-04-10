@@ -20,33 +20,29 @@ function BookItem(props: BookItemsProps) {
 
   return (
     <>
-      <section className="w-full max-w-65  flex flex-col justify- gap-4 items-center border-1 bg-indigo-100
-                          md:min-h-[615px]
-                          lg:min-h-[615px]
+      <section className="w-full max-w-65  flex flex-col justify-between gap-4 items-center border-1 bg-indigo-100
+
                             ">
-        <img src={book.photo} alt="Portada del libro El Hobbit" className=" h-[200px] w-auto object-cover" />
+        <img src={book.photo} alt="Portada del libro El Hobbit" className=" h-[300px] w-auto object-cover" />
 
           <div className="w-full flex items-start justify-start">
-        <h1 className="text-3xl px-3  
-                        md:text-xl
-                        lg:text-[1.5rem] font-bold
+        <h1 className="text-3xl px-3  text-[1.5rem] 
+        font-bold text-gray-700
                         ">{book.title}</h1>
         </div>
         <div className="w-full flex justify-between items-center p-2">
-          <h4 className=' text-[1.2rem]
-                          md:text-[1rem]
-                          lg:text-[1.2rem]
+          <h4 className=' text-[1.4rem]
+
           '>{book.author}</h4>
-          <p className="bg-blue-300 flex  px-3 py-1 rounded-full 
-                          md:text-[0.7rem]
-                          lg:text-[1rem]
+          <p className="bg-blue-300 flex  px-3 py-1 rounded-full text-[1rem]
+
           ">{book.type}</p>
         </div>
-          <div className="w-full flex justify-between items-center p-2 text-[1rem]">
+          <div className="w-full flex justify-between items-center p-2 text-[1.2rem]">
           <p>{book.price}€</p>
             <div className="flex justify-between items-center gap-1" >
-            <button onClick={handleEditBook} className='bg-indigo-700 text-emerald-800' ><RiEditLine size={11}/></button>
-            <button onClick={handleDeleteBook} className='bg-indigo-100 text-red-500'><TbTrashFilled size={11}/></button>
+            <button onClick={handleEditBook} className='bg-indigo-700 text-emerald-800' ><RiEditLine size={15}/></button>
+            <button onClick={handleDeleteBook} className='bg-indigo-100 text-red-500'><TbTrashFilled size={15}/></button>
             </div>
           </div>
       </section>
