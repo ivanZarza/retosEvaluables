@@ -42,15 +42,20 @@ async function newBook(book: FormValues) {
 
 function AddBook() {
 
-  const { register, handleSubmit, formState: { errors }, } = useForm<FormValues>({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({
     mode: "onChange",
     resolver:zodResolver(bookSchema)
   })
 
 
-  function onSubmit(data: FormValues) {
+  async function onSubmit(data: FormValues) {
     console.log('datos', data);
-      newBook(data);
+    try {
+      await newBook(data)
+      reset()
+    } catch (error) {
+      console.error('Error al enviar el libro:', error)
+    }
   }
 
 
