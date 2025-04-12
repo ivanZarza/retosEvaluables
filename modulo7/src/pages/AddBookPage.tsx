@@ -3,6 +3,8 @@ import InputComponentZod from "../components/layouts/InputComponentZod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import bookSchema from '../configs/SchemasZod';
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserProvider";
 
 type FormValues = {
   title: string;
@@ -18,9 +20,9 @@ type inputLibroProps = {
   placeholder: string;
 };
 
-async function newBook(book: FormValues) {
+async function newBook(book: FormValues, id_user: number) {
   const bookConUsuario = {
-    id_user: 5, 
+    id_user: id_user, 
     ...book,
   };
   console.log('bookConUsuario', bookConUsuario);
@@ -41,6 +43,7 @@ async function newBook(book: FormValues) {
 }
 
 function AddBook() {
+  const { user } = useContext(UserContext);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({
     mode: "onChange",
@@ -51,7 +54,7 @@ function AddBook() {
   async function onSubmit(data: FormValues) {
     console.log('datos', data);
     try {
-      await newBook(data)
+      await newBook(data, user?.id_user as number);
       reset()
     } catch (error) {
       console.error('Error al enviar el libro:', error)

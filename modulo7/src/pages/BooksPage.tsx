@@ -1,16 +1,16 @@
 import BookItem from '../components/BookItem'
 import Heading from '../components/layouts/HeadingComponent'
 import { Book } from '../configs/type' 
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState, useContext } from 'react'
+import { UserContext } from '../contexts/UserProvider';
 
 
 function BooksPage() {
 
   const [books, setBooks] = useState<Book[]>([])
-
+  const { user } = useContext(UserContext);
   const urlBase = 'https://api-books-xi.vercel.app';
-const id_user: string | null | undefined =  '5';
+
 
 
 
@@ -43,8 +43,8 @@ catch (error) {
 }
 
 useEffect(() => {
-  getBooks({id_user: id_user})
-}, [])
+  getBooks({id_user: user?.id_user ? String(user.id_user) : null})
+}, [user?.id_user])
 
 
   return (

@@ -1,8 +1,11 @@
 import Heading from "../components/layouts/HeadingComponent";
 import FormComponent from "../components/layouts/FormComponent";
 import InputComponent from "../components/layouts/InputComponent";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import { UserContext } from "../contexts/UserProvider";
+
+
 
 type inputLibroProps = {
   name: string,
@@ -35,6 +38,8 @@ function LoginPage() {
     email: false,
     password: false,
   });
+
+  const { user, logIn } = useContext(UserContext);
 
   function recuperarDatos(name: string, value: string | number | boolean) {
     const objeto = datosLogin.find((objeto) => objeto.name === name)
@@ -85,31 +90,32 @@ function LoginPage() {
     console.log(datosUsuario)
 
     const response = await axios.post("https://api-books-xi.vercel.app/login", datosUsuario,)
-
-  console.log(response.status);
-
+    logIn(response.data.data[0])
+    console.log(response.data.data[0]);
+    console.log(response.status);
+    console.log(user);
   }
 
-    return <>
-      <div className="w-full  flex flex-col  items-center  border-2 ">
-        <Heading level="h1" title="INTRODUCE TUS DATOS" />
-        <FormComponent onSubmit={handleSubmit} >
-          {datosLogin.map(input => (
-            <InputComponent
-              key={input.name}
-              placeholder={input.placeholder}
-              type={input.type}
-              name={input.name}
-              pattern={input.pattern}
-              error={error}
-              validarDatos={validarDatos}
-              recuperarDatos={recuperarDatos}
-              generarMensajeError={generarMensajeError}
-            />
-          ))}
-        </FormComponent>
-      </div>
-    </>
-  };
+  return <>
+    <div className="w-full  flex flex-col  items-center  border-2 ">
+      <Heading level="h1" title="INTRODUCE TUS DATOS" />
+      <FormComponent onSubmit={handleSubmit} >
+        {datosLogin.map(input => (
+          <InputComponent
+            key={input.name}
+            placeholder={input.placeholder}
+            type={input.type}
+            name={input.name}
+            pattern={input.pattern}
+            error={error}
+            validarDatos={validarDatos}
+            recuperarDatos={recuperarDatos}
+            generarMensajeError={generarMensajeError}
+          />
+        ))}
+      </FormComponent>
+    </div>
+  </>
+};
 
-  export default LoginPage;
+export default LoginPage;

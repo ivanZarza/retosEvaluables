@@ -2,6 +2,7 @@ import { Book } from '../configs/type'
 import { TbTrashFilled } from "react-icons/tb";
 import { RiEditLine } from "react-icons/ri";
 
+
 type BookItemsProps={
   book: Book 
 }
@@ -9,6 +10,7 @@ type BookItemsProps={
 function BookItem(props: BookItemsProps) {
 
   const { book } = props;
+
 
   function handleEditBook() {
     console.log('Libro editado');
