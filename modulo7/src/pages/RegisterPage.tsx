@@ -3,6 +3,7 @@ import FormComponent from "../components/layouts/FormComponent";
 import InputComponent from "../components/layouts/InputComponent";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 type inputLibroProps = {
   name: string,
@@ -139,9 +140,9 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     console.log(nuevoUsuario)
 
     const response = await axios.post("https://api-books-xi.vercel.app/register", nuevoUsuario,)
-
+console.log(response.data.ok);
   console.log(response.status);
-
+console.log(response);
   }
 
 

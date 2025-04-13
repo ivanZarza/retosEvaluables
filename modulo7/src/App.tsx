@@ -9,9 +9,11 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 import AddBook from './pages/AddBookPage';
 import EditBook from './pages/EditBookPage';
+import Logout from './pages/LogoutPage';
 
 import { Routes, Route } from "react-router-dom";
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -29,7 +31,7 @@ function App() {
             <Route path="/bookPage" element={<BooksPage />} />
             <Route path="/addbook" element={<AddBook />} />
             <Route path="/editbook" element={<EditBook />} />
-
+            <Route path="/logout" element={<Logout />} />
           </Route>
           <Route element={<PublicRoutes />} >
             <Route path="/login" element={<LoginPage />} />
@@ -39,6 +41,17 @@ function App() {
       </main>
       <Footer />
     </div>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      closeOnClick
+      draggable
+      pauseOnHover
+      theme="dark"
+      style={{ width: "300px", marginTop: "130px" }}
+      toastStyle={{ fontSize: "1.5rem", backgroundColor: "#646cff" }}
+    />
   </>
 }
 

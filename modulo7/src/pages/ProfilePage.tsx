@@ -1,7 +1,8 @@
 import Heading from "../components/layouts/HeadingComponent";
 import InputComponentReactForm from "../components/layouts/InputComponentReactForm";
 import { useForm } from "react-hook-form";
-
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserProvider";
 
 type FormValues = {
   name: string;
@@ -34,6 +35,8 @@ function ProfilePage() {
   } = useForm<FormValues>({
     mode: "onChange",
   });
+
+  const { user } = useContext(UserContext);
   
 
   const onSubmit = (data: FormValues) => {
@@ -79,7 +82,7 @@ function ProfilePage() {
       type: "text",
       placeholder: "URL de la foto",
       validators: {
-        maxLength: { value: 100, message: "La URL no puede tener más de 100 caracteres" },
+        maxLength: { value: 200, message: "La URL no puede tener más de 200 caracteres" },
         minLength: { value: 5, message: "La URL no puede tener menos de 5 caracteres" },
         required: { value: true, message: "La URL es obligatoria" },
       }, 
@@ -112,8 +115,14 @@ function ProfilePage() {
 
   return (
     <>
+      <div className="w-full flex flex-col  items-center border-2 py-10  gap-10">
+      <Heading level="h1" title="TU PÁGINA" />
+        <img src={user?.photo} alt="Foto de perfil" className="rounded-full w-70 h-70 m-4" />
+        <h2 className="text-4xl font-bold " >{user?.name} {user?.last_name}</h2>
+        <h3 className="text-3xl">{user?.email}</h3>
+      </div>
       <div className="w-full flex flex-col items-center border-2 py-6 ">
-        <Heading level="h1" title="TU PÁGINA" />
+        <Heading level="h1" title="Modifica tus datos" />
         <form
           className="shadow-teal-300 inset-shadow-xs shadow-outline p-20 shadow-lg flex flex-col gap-3 bg-gray-100 min-w-2xl"
           onSubmit={handleSubmit(onSubmit)}

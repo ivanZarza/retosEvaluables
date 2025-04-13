@@ -4,6 +4,7 @@ import InputComponent from "../components/layouts/InputComponent";
 import { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../contexts/UserProvider";
+import { toast } from "react-toastify";
 
 
 
@@ -91,6 +92,7 @@ function LoginPage() {
 
     const response = await axios.post("https://api-books-xi.vercel.app/login", datosUsuario,)
     logIn(response.data.data[0])
+    toast.success('Inicio de sesión exitoso');
     console.log(response.data.data[0]);
     console.log(response.status);
     console.log(user);

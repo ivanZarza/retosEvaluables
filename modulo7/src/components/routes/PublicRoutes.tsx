@@ -1,8 +1,10 @@
 import { Outlet, Navigate } from "react-router-dom"
 
-function PublicRoutes() {
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserProvider";
 
-  const user = ""
+function PublicRoutes() {
+  const { user } = useContext(UserContext)
 
 
 if(!user) return <Outlet/>

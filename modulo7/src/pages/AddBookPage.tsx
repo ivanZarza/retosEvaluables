@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import bookSchema from '../configs/SchemasZod';
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserProvider";
+import { toast } from "react-toastify";
 
 type FormValues = {
   title: string;
@@ -56,8 +57,10 @@ function AddBook() {
     try {
       await newBook(data, user?.id_user as number);
       reset()
+      toast.success('Libro añadido correctamente');
     } catch (error) {
       console.error('Error al enviar el libro:', error)
+      toast.error('Error al enviar el libro');
     }
   }
 

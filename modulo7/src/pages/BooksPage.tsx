@@ -3,6 +3,7 @@ import Heading from '../components/layouts/HeadingComponent'
 import { Book } from '../configs/type' 
 import { useEffect, useState, useContext } from 'react'
 import { UserContext } from '../contexts/UserProvider';
+import { toast } from 'react-toastify';
 
 
 function BooksPage() {
@@ -32,13 +33,16 @@ async function getBooks({ id_user = null, id_book = null } : {id_user?: string| 
   });
   if (!response.ok) {
     throw new Error('Error en la solicitud');
+    toast.error('Error en la solicitud');
   }
   const data = await response.json();
   console.log(response.status);
   setBooks(data.data) 
+  toast.success('Libros obtenidos correctamente');
 }
 catch (error) {
   console.error('Error:',error);
+  toast.error('Error al obtener los libros');
 }
 }
 
