@@ -64,9 +64,9 @@ function AddBook() {
     };
     console.log('book', book);
     try {
-      const addBookResult =  await addBook(user?.id_user as number, book);
-      console.log('addBookResult', addBookResult);
-      if(addBookResult.ok===true){
+      const respuesta =  await addBook(user?.id_user as number, book);
+      console.log('respuesta', respuesta);
+      if(respuesta.ok===true){
       reset();
       toast.success('Libro añadido correctamente');
     } else {
