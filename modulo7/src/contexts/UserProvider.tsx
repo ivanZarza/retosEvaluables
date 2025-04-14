@@ -41,13 +41,11 @@ function UserProvider(props: UserProviderProps) {
   
   function logIn(user: User) {
     setUser(user);
-
     localStorage.setItem("user", JSON.stringify(user));
   }
 
   function logOut() {
     setUser(null);
-
     localStorage.removeItem("user");
   }
 

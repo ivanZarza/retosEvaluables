@@ -5,7 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import bookSchema from '../configs/SchemasZod';
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserProvider";
+import { BooksContext } from "../contexts/BooksProvider";
 import { toast } from "react-toastify";
+import { Book } from "../configs/type";
+
 
 type FormValues = {
   title: string;
@@ -21,7 +24,7 @@ type inputLibroProps = {
   placeholder: string;
 };
 
-async function newBook(book: FormValues, id_user: number) {
+/* async function newBook(book: FormValues, id_user: number) {
   const bookConUsuario = {
     id_user: id_user, 
     ...book,
@@ -41,10 +44,11 @@ async function newBook(book: FormValues, id_user: number) {
   const response = await url
   const data = await response.json();
   console.log('respuesta', data);
-}
+} */
 
 function AddBook() {
   const { user } = useContext(UserContext);
+  const { addBook } = useContext(BooksContext);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({
     mode: "onChange",
@@ -54,12 +58,22 @@ function AddBook() {
 
   async function onSubmit(data: FormValues) {
     console.log('datos', data);
+    const book: Book = {
+      id_user: user?.id_user as number,
+      ...data,
+    };
+    console.log('book', book);
     try {
-      await newBook(data, user?.id_user as number);
-      reset()
+      const addBookResult =  await addBook(user?.id_user as number, book);
+      console.log('addBookResult', addBookResult);
+      if(addBookResult.ok===true){
+      reset();
       toast.success('Libro añadido correctamente');
+    } else {
+      toast.error('No se pudo añadir el libro')
+    }
     } catch (error) {
-      console.error('Error al enviar el libro:', error)
+      console.error('Error al enviar el libro:', error);
       toast.error('Error al enviar el libro');
     }
   }

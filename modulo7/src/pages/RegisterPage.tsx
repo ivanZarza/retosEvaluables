@@ -4,6 +4,7 @@ import InputComponent from "../components/layouts/InputComponent";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 type inputLibroProps = {
   name: string,
@@ -13,7 +14,12 @@ type inputLibroProps = {
   pattern: string
 }
 
+const {
+  VITE_API_ORIGIN
+} = import.meta.env
+
 function RegisterPage() {
+  const navigate = useNavigate()
 
   const [datosRegistro, setDatosRegistro] = useState<inputLibroProps[]>([
     {
@@ -128,7 +134,7 @@ function RegisterPage() {
     return '';
   }
 
-async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nuevoUsuario = {
       name: datosRegistro[0].value,
@@ -138,11 +144,24 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
       password: datosRegistro[4].value,
     };
     console.log(nuevoUsuario)
-
-    const response = await axios.post("https://api-books-xi.vercel.app/register", nuevoUsuario,)
-console.log(response.data.ok);
-  console.log(response.status);
-console.log(response);
+    try {
+      const response = await axios.post(`${VITE_API_ORIGIN}/register`, nuevoUsuario);
+      console.log(response);
+      if (response.status === 200) {
+        toast.success("Usuario registrado correctamente");
+        navigate("/login")
+      } else {
+        toast.error("Error al registrar el usuario");
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.error("Error en la solicitud:", error.message);
+        toast.error("Error en la solicitud");
+      } else {
+        console.error("Error inesperado:", error);
+        toast.error("Error inesperado");
+      }
+    }
   }
 
 

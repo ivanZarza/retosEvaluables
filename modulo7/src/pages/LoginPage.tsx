@@ -7,7 +7,6 @@ import { UserContext } from "../contexts/UserProvider";
 import { toast } from "react-toastify";
 
 
-
 type inputLibroProps = {
   name: string,
   type: string,
@@ -15,6 +14,10 @@ type inputLibroProps = {
   value: string | number | boolean,
   pattern: string,
 }
+
+const {
+  VITE_API_ORIGIN
+} = import.meta.env
 
 function LoginPage() {
 
@@ -90,9 +93,13 @@ function LoginPage() {
     };
     console.log(datosUsuario)
 
-    const response = await axios.post("https://api-books-xi.vercel.app/login", datosUsuario,)
+    const response = await axios.post(`${VITE_API_ORIGIN}/login`, datosUsuario,)
     logIn(response.data.data[0])
-    toast.success('Inicio de sesión exitoso');
+    if (response.data.ok) {
+      toast.success('Inicio de sesión exitoso');
+    } else {
+      toast.error('Error en el inicio de sesión');
+    }
     console.log(response.data.data[0]);
     console.log(response.status);
     console.log(user);

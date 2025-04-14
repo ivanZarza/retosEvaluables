@@ -2,12 +2,12 @@
 
 import Menu from "./Menu";
 
+
 /* type MenuProps = {
   isOpenSidebar: boolean;
 } 
  */
 function SideBar(/* props: MenuProps */) {
-
 /*   const { isOpenSidebar } = props; */
 
   return <>

@@ -3,6 +3,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserProvider";
+import GreekComponent from "./GreekComponent";
 
 
 
@@ -26,8 +27,8 @@ function Menu(/* props:MenuProps */) {
   return (
     <>
       <nav className="flex flex-col  justify-around items-center  text-4xl gap-2  w-full  p-4 h-200 bg-gradient-to-b bg-teal-300/90 to-white/90 backdrop-blur-lg
-                      md:text-2xl md:gap-6 md:justify-end md:flex-row md:m-2 md:w-full md:bg-none md:h-fit
-                      lg:text-3xl lg:gap-8" /* {clases} */>
+                      md:text-xl md:gap-5 md:justify-end md:flex-row md:m-2 md:w-full md:bg-none md:h-fit
+                      lg:text-3xl lg:gap-5" /* {clases} */>
         <NavLink to="/" >Home</NavLink>
         {!ifUser && <NavLink to="/login" >Login</NavLink>}
         {!ifUser && <NavLink to="/register" >Register</NavLink>}
@@ -35,7 +36,10 @@ function Menu(/* props:MenuProps */) {
         {ifUser && <NavLink to="/BookPage" >Libros</NavLink>}
         {ifUser && <NavLink to="/addbook" >Add Book</NavLink>}
         {ifUser && <NavLink to="/editbook" >Edit Book</NavLink>}
+        {ifUser && <NavLink to="/logout" >Logout</NavLink>}
+        {user && <GreekComponent />}
       </nav>
+
     </>
   );
 }

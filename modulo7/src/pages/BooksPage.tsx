@@ -1,58 +1,25 @@
 import BookItem from '../components/BookItem'
 import Heading from '../components/layouts/HeadingComponent'
-import { Book } from '../configs/type' 
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { UserContext } from '../contexts/UserProvider';
-import { toast } from 'react-toastify';
+ import { BooksContext } from '../contexts/BooksProvider'; 
 
 
 function BooksPage() {
 
-  const [books, setBooks] = useState<Book[]>([])
+
   const { user } = useContext(UserContext);
-  const urlBase = 'https://api-books-xi.vercel.app';
+  const { books, getBooks } = useContext(BooksContext); 
 
 
-
-
-async function getBooks({ id_user = null, id_book = null } : {id_user?: string| null, id_book?: string| null }= {}) {
-  const url = new URL(`${urlBase}/books`);
-  try {
-    if(id_user) {
-    url.searchParams.append('id_user', id_user);
-  }
-  if(id_book) {
-    url.searchParams.append('id_book', id_book);
-  }
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-  });
-  if (!response.ok) {
-    throw new Error('Error en la solicitud');
-    toast.error('Error en la solicitud');
-  }
-  const data = await response.json();
-  console.log(response.status);
-  setBooks(data.data) 
-  toast.success('Libros obtenidos correctamente');
-}
-catch (error) {
-  console.error('Error:',error);
-  toast.error('Error al obtener los libros');
-}
-}
 
 useEffect(() => {
-  getBooks({id_user: user?.id_user ? String(user.id_user) : null})
-}, [user?.id_user])
+  getBooks({id_user: user?.id_user })
+}, [user, getBooks]);
 
 
   return (
-    <div className='w-full flex flex-col items-center border-2'>
+    <div className='w-full flex flex-col items-center border-y-2'>
       <Heading level='h1' title='TUS LIBROS'/>
       <ul className='flex flex-col gap-6 justify-center items-center
                       sm:grid sm:grid-cols-1 sm:gap-8

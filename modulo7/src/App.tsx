@@ -46,11 +46,9 @@ function App() {
       autoClose={5000}
       hideProgressBar={false}
       closeOnClick
-      draggable
       pauseOnHover
-      theme="dark"
       style={{ width: "300px", marginTop: "130px" }}
-      toastStyle={{ fontSize: "1.5rem", backgroundColor: "#646cff" }}
+      toastStyle={{ fontSize: "1.5rem", backgroundColor: "#fff", color: "#646cff" }}
     />
   </>
 }

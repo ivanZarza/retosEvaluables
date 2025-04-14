@@ -1,18 +1,14 @@
 // TODO LO COMENTADO ES LA SOLUCION DEL PROFESOR AL EJERCIO DEL TEMA 3
-import GreekComponent from "./GreekComponent";
 import Logo from "./Logo";
 import Menu from "./Menu";
 import SideBar from "./SideBar";
 import { GiHamburgerMenu } from "react-icons/gi";
-
 import { useState } from "react";
 
 
 function Header() {
 
   const [isOpenSidebar, setisOpenSidebar] = useState(false);
-
-
 
   return (
     <>
@@ -27,10 +23,8 @@ function Header() {
         <div className="hidden md:flex items-center">
           <Menu /* isOpenSidebar={isOpenSidebar} */ />
           <div className="hidden md:flex ">
-          <GreekComponent />
         </div>
         </div>
-
         <div className="md:hidden ">
           {isOpenSidebar && <SideBar /* isOpenSidebar={isOpenSidebar}  *//>}
         </div>
