@@ -35,7 +35,6 @@ function Menu(/* props:MenuProps */) {
         {ifUser && <NavLink to="/profile" >Profile</NavLink>}
         {ifUser && <NavLink to="/BookPage" >Libros</NavLink>}
         {ifUser && <NavLink to="/addbook" >Add Book</NavLink>}
-        {ifUser && <NavLink to="/editbook" >Edit Book</NavLink>}
         {ifUser && <NavLink to="/logout" >Logout</NavLink>}
         {user && <GreekComponent />}
       </nav>

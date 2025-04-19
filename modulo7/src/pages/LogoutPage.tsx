@@ -14,7 +14,11 @@ function Logout() {
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold">¡Hasta luego!</h1>
+      <h1 className="text-3xl font-bold
+                      md:text-6xl
+                      lg:text-7xl
+                      text-gray-700 
+      ">¡Hasta luego!</h1>
       <button
         onClick={handleLogout}
         className="bg-[#3640fd] text-white px-4 py-2 rounded mt-4"

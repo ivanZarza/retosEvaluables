@@ -7,11 +7,8 @@ import { UserContext } from '../contexts/UserProvider';
 
 function BooksPage() {
 
-
   const { user } = useContext(UserContext);
   const { books, getBooks } = useContext(BooksContext); 
-
-
 
 useEffect(() => {
   getBooks({id_user: user?.id_user })

@@ -7,12 +7,18 @@ type BookContextType = {
   getBooks: ({ id_user, id_book }: { id_user?: number | null; id_book?: number | null; }) => Promise<void>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   addBook: (id_user: number, book: Book) => Promise<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  editBook: (book: Book) => Promise<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  deleteBook: (id_book: number, id_user: number) => Promise<any>;
 };
 
 const BooksContext = createContext<BookContextType>({
   books: [],
   getBooks: async () => {},
   addBook: async () => {},
+  editBook: async () => {},
+  deleteBook: async () => {},
 });
 
 
@@ -75,10 +81,32 @@ function BooksProvider(props: BooksProviderProps) {
       });
     }
 
+    async function editBook ( book: Book) {
+      const url = new URL(`${VITE_API_ORIGIN}/books`);
+      return await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({book}),
+      });
+    }
 
+    async function deleteBook(id_book: number, id_user: number) {
+      const url = new URL(`${VITE_API_ORIGIN}/books`);
+      return await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ id_book, id_user }),
+      });
+    }
 
   return (
-    <BooksContext.Provider value={{ books, getBooks, addBook }}>
+    <BooksContext.Provider value={{ books, getBooks, addBook, editBook, deleteBook }}>
       {children}
     </BooksContext.Provider>
   )

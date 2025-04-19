@@ -1,6 +1,8 @@
 import { Book } from '../configs/type'
 import { TbTrashFilled } from "react-icons/tb";
 import { RiEditLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
+
 
 
 type BookItemsProps={
@@ -12,9 +14,6 @@ function BookItem(props: BookItemsProps) {
   const { book } = props;
 
 
-  function handleEditBook() {
-    console.log('Libro editado');
-  }
 
   function handleDeleteBook() {
     console.log('Libro borrado');
@@ -23,7 +22,7 @@ function BookItem(props: BookItemsProps) {
   return (
     <>
       <section className="w-full max-w-65 h-[550px]  flex flex-col justify-between items-center border-1 bg-indigo-100 mb-3 mt-10">
-        <img src={book.photo} alt="Portada del libro El Hobbit" className=" h-[300px] w-full object-cover" />
+        <img src={book.photo} alt="" className=" h-[300px] w-full object-cover" />
 
           <div className="w-full flex items-start justify-start">
         <h1 className="text-2xl px-3  
@@ -41,8 +40,12 @@ function BookItem(props: BookItemsProps) {
           <div className="w-full flex justify-between items-center p-2 text-lg">
           <p>{book.price}€</p>
             <div className="flex justify-between items-center gap-1" >
-            <button onClick={handleEditBook} className='bg-indigo-700 text-emerald-800' ><RiEditLine size={15}/></button>
+            <Link to={`/bookPage/books/${book.id_book}`}  state={book}  >
+            <button  className='bg-indigo-700 text-emerald-800' ><RiEditLine size={15}/></button>
+              </Link>
+              <Link to={`/bookPage/books/delete/${book.id_book}`} state={book} >
             <button onClick={handleDeleteBook} className='bg-indigo-100 text-red-500'><TbTrashFilled size={15}/></button>
+              </Link>
             </div>
           </div>
       </section>

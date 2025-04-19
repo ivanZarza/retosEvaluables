@@ -25,7 +25,9 @@ function InputComponent(props: InputProps) {
     <div className={`w-full flex border-2 pl-1.5  flex-col justify-between focus:outline-none ${valido ? "bg-gray-200 border-teal-500 " : "bg-red-100 border-red-600"}`}>
       <label>{activo ? `${props.placeholder}` : ''}</label>
       <input
-        className="h-10 placeholder:text-2xl focus:outline-none text-2xl placeholder-gray-600 "
+        className="h-7 placeholder:text-lg text-lg  focus:outline-none  placeholder-gray-600 
+        sm:placeholder:text-xl sm:text-xl sm:h-8
+        md:placeholder:text-2xl md:text-2xl md:h-10"
         type={props.type}
         placeholder={props.placeholder}
         name={props.name}
@@ -43,7 +45,7 @@ function InputComponent(props: InputProps) {
                   : (event) => props.recuperarDatos(event.target.name, event.target.value) */
       />
 
-      {!valido && <p className='text-red-600'>{props.generarMensajeError(props.name, inputRef.current?.value)}</p>}
+      {!valido && <p className='text-red-600 text-sm sm:text-lg '>{props.generarMensajeError(props.name, inputRef.current?.value)}</p>}
 
     </div>
   );

@@ -8,6 +8,7 @@ import { UserContext } from "../contexts/UserProvider";
 import { BooksContext } from "../contexts/BooksProvider";
 import { toast } from "react-toastify";
 import { Book } from "../configs/type";
+import { useNavigate } from "react-router-dom";
 
 
 type FormValues = {
@@ -24,31 +25,11 @@ type inputLibroProps = {
   placeholder: string;
 };
 
-/* async function newBook(book: FormValues, id_user: number) {
-  const bookConUsuario = {
-    id_user: id_user, 
-    ...book,
-  };
-  console.log('bookConUsuario', bookConUsuario);
-  const url= await fetch('https://api-books-xi.vercel.app/books', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-    body: JSON.stringify({book: bookConUsuario})
-  });
-  if (!url.ok) {
-    throw new Error('Error en la solicitud');
-  }
-  const response = await url
-  const data = await response.json();
-  console.log('respuesta', data);
-} */
 
 function AddBook() {
   const { user } = useContext(UserContext);
   const { addBook } = useContext(BooksContext);
+  const Navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({
     mode: "onChange",
@@ -69,6 +50,7 @@ function AddBook() {
       if(respuesta.ok===true){
       reset();
       toast.success('Libro añadido correctamente');
+      Navigate('/bookPage')
     } else {
       toast.error('No se pudo añadir el libro')
     }
@@ -106,7 +88,9 @@ function AddBook() {
 
     <div className="w-full  flex flex-col  items-center  border-2 ">
       <Heading level="h1" title="AÑADE UN LIBRO" />
-      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-20 shadow-lg flex flex-col gap-3 bg-gray-100 min-w-2xl"
+      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-5 shadow-lg flex flex-col gap-3 bg-gray-100
+    sm:p-10 sm:gap-5 sm:rounded-lg sm:shadow-md sm:min-w-xl
+    md:p-20  md:min-w-2xl"
       >
         {datosUsuario.map((input) =>
           <InputComponentZod

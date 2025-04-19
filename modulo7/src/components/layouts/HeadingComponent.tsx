@@ -14,7 +14,7 @@ function Heading(props: HeadingProps) {
   const Tag = acceptedTags.includes(level) ? level : 'h1';
 
   const headingClasses = {
-    h1: 'text-5xl',
+    h1: 'text-3xl sm:text-4xl md:text-5xl', 
     h2: 'text-2xl',
     h3: 'text-xl',
     h4: 'text-lg',
@@ -24,7 +24,9 @@ function Heading(props: HeadingProps) {
 
   return(
     <div className="w-full flex h-1/7 justify-center items-center " >
-    <Tag className={`${headingClasses[Tag]} text-[#484ec7] titulo`}   >{title || children}</Tag>
+    <Tag className={`${headingClasses[Tag]} text-[#484ec7] titulo
+
+      `}   >{title || children}</Tag>
     </div> //Asi ponemos el valor de Tag a headingclases
 )
 }
