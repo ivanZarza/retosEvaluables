@@ -1,6 +1,6 @@
 // TODO LO COMENTADO ES LA SOLUCION DEL PROFESOR AL EJERCIO DEL TEMA 3
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserProvider";
 import GreekComponent from "./GreekComponent";
@@ -36,7 +36,9 @@ function Menu(props:MenuProps) {
         {ifUser && <NavLink to="/bookpage" onClick={closeMenu} >Libros</NavLink>}
         {ifUser && <NavLink to="/addbook" onClick={closeMenu} >Add Book</NavLink>}
         {ifUser && <NavLink to="/logout" onClick={closeMenu} >Logout</NavLink>}
+        <Link to="/profile" onClick={closeMenu} >
         {user && <GreekComponent />}
+        </Link>
       </nav>
 
     </>
