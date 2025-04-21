@@ -108,5 +108,5 @@ button:hover {
 
 .animated-gradient {
   background-size: 400% 400%;
-  animation: gradient 10s ease-in-out infinite;
+  animation: gradient 6s ease infinite;
 }
