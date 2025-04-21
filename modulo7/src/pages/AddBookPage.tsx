@@ -42,6 +42,7 @@ function AddBook() {
     const book: Book = {
       id_user: user?.id_user as number,
       ...data,
+      favorite: 0
     };
     console.log('book', book);
     try {
@@ -102,13 +103,18 @@ function AddBook() {
             errors={errors}
           />)}
           <div className="w-full flex border-2 pl-1.5  flex-col justify-between focus:outline-none bg-gray-200 border-teal-500 ">
-            <label className="text-gray-700 text-2xl">
+            <label className="text-gray-700 
+            text-lg
+            sm:placeholder:text-xl sm:text-xl 
+            md:text-2xl">
               Tipo de tapa
             <select
               {...register("type" )}
-              className="w-full flex  pl-1.5 text-2xl flex-col justify-between focus:outline-none bg-gray-200 border-teal-500 placeholder:text-2xl `"
+              className="w-full flex  pl-1.5  flex-col justify-between focus:outline-none bg-gray-200 border-teal-500 
+              sm:placeholder:text-xl sm:text-xl sm:h-8
+              md:placeholder:text-2xl"
             >
-              <option value="">Selecciona una opción</option>
+              <option value="" >Selecciona una opción</option>
               <option value={'Tapa dura'} >Tapa dura</option>
               <option value={'Tapa blanda'}>Tapa blanda</option>
             </select>

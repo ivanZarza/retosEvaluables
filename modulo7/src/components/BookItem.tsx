@@ -1,29 +1,37 @@
 import { Book } from '../configs/type'
 import { TbTrashFilled } from "react-icons/tb";
 import { RiEditLine } from "react-icons/ri";
+import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 
 
+
 type BookItemsProps={
+
   book: Book 
+
+  handleFavorite: (id_book: number | undefined) => void
+
 }
 
 function BookItem(props: BookItemsProps) {
 
-  const { book } = props;
+  const { book, handleFavorite } = props;
+
+const favoriteClass = book.favorite === 1 ? "isFavorite" : "favorite";
 
 
 
-  function handleDeleteBook() {
-    console.log('Libro borrado');
-  }
+
 
   return (
     <>
-      <section className="w-full max-w-65 h-[550px]  flex flex-col justify-between items-center border-1 bg-indigo-100 mb-3 mt-10">
-        <img src={book.photo} alt="" className=" h-[300px] w-full object-cover" />
-
+      <section className="w-full max-w-65 h-[550px]  flex flex-col justify-between items-center border-1 bg-indigo-100 mb-3 mt-10 ">
+        <div className='w-full relative'>
+        <img src={book.photo} alt="" className=" h-[300px] w-full object-cover " />
+          <button onClick={() => handleFavorite(book.id_book)} className={favoriteClass}  ><FaHeart size={15}/></button>
+          </div>
           <div className="w-full flex items-start justify-start">
         <h1 className="text-2xl px-3  
         font-bold text-gray-700
@@ -41,10 +49,10 @@ function BookItem(props: BookItemsProps) {
           <p>{book.price}€</p>
             <div className="flex justify-between items-center gap-1" >
             <Link to={`/bookPage/books/${book.id_book}`}  state={book}  >
-            <button  className='bg-indigo-700 text-emerald-800' ><RiEditLine size={15}/></button>
+            <button   ><RiEditLine size={15}/></button>
               </Link>
               <Link to={`/bookPage/books/delete/${book.id_book}`} state={book} >
-            <button onClick={handleDeleteBook} className='bg-indigo-100 text-red-500'><TbTrashFilled size={15}/></button>
+            <button className='bg-indigo-100 text-red-500'><TbTrashFilled size={15}/></button>
               </Link>
             </div>
           </div>

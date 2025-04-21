@@ -10,10 +10,13 @@ function Header() {
 
   const [isOpenSidebar, setisOpenSidebar] = useState(false);
 
+
+
   return (
     <>
       <header className="w-full  sticky top-0 bg-transparent
                           md:flex md:items-center md:justify-between md:bg-teal-300
+                          z-10
                           ">
         <div className="flex justify-between bg-teal-300/90 backdrop-blur-lg">
           <Logo />
@@ -21,12 +24,12 @@ function Header() {
           </button>
         </div>
         <div className="hidden md:flex items-center">
-          <Menu /* isOpenSidebar={isOpenSidebar} */ />
+          <Menu closeMenu={() => setisOpenSidebar(false)}   />
           <div className="hidden md:flex ">
         </div>
         </div>
         <div className="md:hidden ">
-          {isOpenSidebar && <SideBar /* isOpenSidebar={isOpenSidebar}  *//>}
+          {isOpenSidebar && <SideBar closeMenu={() => setisOpenSidebar(false)} />}
         </div>
       </header>
     </>

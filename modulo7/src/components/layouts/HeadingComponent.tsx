@@ -23,7 +23,7 @@ function Heading(props: HeadingProps) {
   }
 
   return(
-    <div className="w-full flex h-1/7 justify-center items-center " >
+    <div className="w-full flex h-1/7 justify-center items-center mb-5" >
     <Tag className={`${headingClasses[Tag]} text-[#484ec7] titulo
 
       `}   >{title || children}</Tag>

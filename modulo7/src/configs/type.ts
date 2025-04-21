@@ -5,7 +5,8 @@ type Book= {
   author: string,
   photo: string,
   price: number,
-  type: 'Tapa dura' | 'Tapa blanda'
+  type: 'Tapa dura' | 'Tapa blanda',
+  favorite: number,
 }
 
 type inputLibroProps = {

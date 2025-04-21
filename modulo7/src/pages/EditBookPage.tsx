@@ -104,7 +104,9 @@ function EditBook() {
 
     <div className="w-full  flex flex-col  items-center  border-2 ">
       <Heading level="h1" title="EDITA EL LIBRO" />
-      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-20 shadow-lg flex flex-col gap-3 bg-gray-100 min-w-2xl"
+      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-5 shadow-lg flex flex-col gap-3 bg-gray-100
+    sm:p-10 sm:gap-5 sm:rounded-lg sm:shadow-md sm:min-w-xl
+    md:p-20  md:min-w-2xl"
       >
         {datosUsuario.map((input) =>
           <InputComponentZod
@@ -116,11 +118,17 @@ function EditBook() {
             errors={errors}
           />)}
         <div className="w-full flex border-2 pl-1.5  flex-col justify-between focus:outline-none bg-gray-200 border-teal-500 ">
-          <label className="text-gray-700 text-2xl">
+          <label className="text-gray-700             
+            text-lg
+            sm:placeholder:text-xl sm:text-xl 
+            md:text-2xl">
             Tipo de tapa
             <select
               {...register("type")}
-              className="w-full pl-1.5 text-2xl flex-col justify-between focus:outline-none bg-gray-200 border-teal-500 placeholder:text-2xl `"
+              className="w-full pl-1.5  flex-col justify-between focus:outline-none bg-gray-200 border-teal-500
+              placeholder:text-lg text-lg 
+              sm:placeholder:text-xl sm:text-xl sm:h-8
+              md:placeholder:text-2xl"
             >
               <option value="">"Elige una opcion"</option>
               <option value={'Tapa dura'} >Tapa dura</option>

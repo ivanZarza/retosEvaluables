@@ -40,8 +40,8 @@ function FormComponentReactForm(props: InputProps) {
       <label>{activo == true ? `${props.placeholder}` : ''}</label>
       <input
         className="h-7 placeholder:text-lg text-lg  focus:outline-none  placeholder-gray-600 
-        md:placeholder:text-2xl md:text-2xl md:h-10
-        "
+        sm:placeholder:text-xl sm:text-xl sm:h-8 
+        md:placeholder:text-2xl md:text-2xl md:h-10"
         type={props.type}
         placeholder={props.placeholder}
 

@@ -3,16 +3,16 @@
 import Menu from "./Menu";
 
 
-/* type MenuProps = {
-  isOpenSidebar: boolean;
+type MenuProps = {
+  closeMenu: () => void;
 } 
- */
-function SideBar(/* props: MenuProps */) {
-/*   const { isOpenSidebar } = props; */
+
+function SideBar(props: MenuProps) {
+  const { closeMenu } = props;
 
   return <>
   <div className="fixed top-24 right-0 w-full z-50 ">
-<Menu /* isOpenSidebar={isOpenSidebar} */ />
+<Menu closeMenu={closeMenu} />
 </div>
 </>
 }

@@ -21,7 +21,7 @@ function Header() {
         <div className={`${mostrarMenu ? 'block' : 'hidden'}
                         sm:block
                       `}>
-          <Menu />
+          <Menu closeMenu={() => setMostrarMenu(false)}  />
         </div>
       </header>
     </>

@@ -37,11 +37,16 @@ function DeleteBookPage() {
     navigate('/bookPage');
   };
   return (
-    <div>
-      <h1>Borrar libro</h1>
-      <p>Vas a borrar el libro, ¿Estas seguro?</p>
-      <button onClick={handleDeleteBook} >Delete</button>
-      <button onClick={handleCancel} >Cancelar</button>
+    <div className="w-full flex flex-col justify-center items-center">
+      <h1 className="text-3xl font-bold
+                      md:text-6xl
+                      lg:text-7xl
+                      text-gray-700" >Borrar libro</h1>
+      <p className="text-2xl 
+                      lg:text-5xl
+                      text-gray-700">¿Estas seguro?</p>
+      <button onClick={handleDeleteBook} className="bg-[#3640fd] text-white  px-4 py-2 rounded mt-4">BORRAR</button>
+      <button onClick={handleCancel} className="bg-[#3640fd] text-white px-4 py-2 rounded mt-4">VOLVER ATRAS</button>
     </div>
   );
 }
