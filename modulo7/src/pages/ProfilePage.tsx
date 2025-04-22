@@ -115,7 +115,7 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="w-full flex flex-col xl:flex-row items-center border-2 ">
+      <div className="w-full flex flex-col xl:flex-row items-center ">
         <div className="w-full flex flex-col  items-center  py-10  gap-10">
           <Heading level="h1" title="TU PÁGINA" />
           <img src={user?.photo} alt="Foto de perfil" className="rounded-full  w-50 h-50

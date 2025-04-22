@@ -17,8 +17,8 @@ type formProps = {
 }
 
 type ChildWithProps = React.ReactElement<{
-  name?: string; // Propiedad opcional `name` que estás verificando
-  register?: UseFormRegister<FormValues>; // Propiedad `register` que se inyectará
+  name?: string; 
+  register?: UseFormRegister<FormValues>; 
 }>;
 
 function FormComponentZod(props: formProps) {

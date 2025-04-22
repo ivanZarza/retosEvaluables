@@ -87,7 +87,7 @@ function AddBook() {
 
   return <>
 
-    <div className="w-full  flex flex-col  items-center  border-2 ">
+    <div className="w-full  flex flex-col  items-center   ">
       <Heading level="h1" title="AÑADE UN LIBRO" />
       <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-5 shadow-lg flex flex-col gap-3 bg-gray-100
     sm:p-10 sm:gap-5 sm:rounded-lg sm:shadow-md sm:min-w-xl

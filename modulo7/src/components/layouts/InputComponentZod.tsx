@@ -35,7 +35,7 @@ function InputComponentZod(props: InputProps) {
         sm:placeholder:text-xl sm:text-xl sm:h-8
         md:placeholder:text-2xl md:text-2xl md:h-10"
         type={props.type}
-        placeholder={props.placeholder}
+        placeholder={ !activo ? props.placeholder : ''}
         onChange={(e) => {
           props.register?.(props.name)?.onChange(e);
           }}
@@ -47,7 +47,7 @@ function InputComponentZod(props: InputProps) {
           }}
       />
 
-      {invalido && <p className="text-red-500">{String(props.errors[props.name]?.message)}</p>}
+      {invalido && <p className="text-red-500 text-[0.75rem]  md:text-lg ">{String(props.errors[props.name]?.message)}</p>}
 
     </div>
   );

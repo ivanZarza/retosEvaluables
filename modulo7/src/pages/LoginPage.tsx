@@ -106,7 +106,7 @@ function LoginPage() {
   }
 
   return <>
-    <div className="w-full  flex flex-col  items-center  border-2 ">
+    <div className="w-full  flex flex-col  items-center ">
       <Heading level="h1" title="INTRODUCE TUS DATOS" />
       <FormComponent onSubmit={handleSubmit} >
         {datosLogin.map(input => (

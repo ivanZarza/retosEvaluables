@@ -166,7 +166,7 @@ function RegisterPage() {
 
 
   return <>
-    <div className="w-full  flex flex-col  items-center  border-2" >
+    <div className="w-full  flex flex-col  items-center " >
       <Heading level="h1" title="RELLENA TUS DATOS" />
       <FormComponent onSubmit={handleSubmit} >
         {

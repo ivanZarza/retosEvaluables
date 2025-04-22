@@ -18,9 +18,9 @@ function Header() {
                           md:flex md:items-center md:justify-between md:bg-teal-300
                           z-10
                           ">
-        <div className="flex justify-between items-center bg-teal-300/90 backdrop-blur-lg">
+        <div className="flex justify-between items-center bg-teal-300/100 backdrop-blur-lg">
           <Logo />
-          <button onClick={() => setisOpenSidebar(!isOpenSidebar)} className="md:hidden h-20 bg-white rounded-b-full rounded-t-full shadow-neutral-950 shadow-sm hover:bg-gray-100 transition duration-300"><GiHamburgerMenu size={30}/>
+          <button onClick={() => setisOpenSidebar(!isOpenSidebar)} className="md:hidden h-20  rounded-b-full rounded-t-full  hover:bg-gray-100  transition duration-300 desplegable"><GiHamburgerMenu size={40}/>
           </button>
         </div>
         <div className="hidden md:flex items-center">

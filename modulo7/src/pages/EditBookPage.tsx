@@ -104,7 +104,7 @@ function EditBook() {
 
     <div className="w-full  flex flex-col  items-center  border-2 ">
       <Heading level="h1" title="EDITA EL LIBRO" />
-      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-5 shadow-lg flex flex-col gap-3 bg-gray-100
+      <form onSubmit={handleSubmit(onSubmit)} className="shadow-teal-300 inset-shadow-xs shadow-outline p-5 shadow-lg flex flex-col gap-3 bg-gray-100 mb-4
     sm:p-10 sm:gap-5 sm:rounded-lg sm:shadow-md sm:min-w-xl
     md:p-20  md:min-w-2xl"
       >

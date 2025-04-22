@@ -37,7 +37,7 @@ function BooksPage() {
 
 
   return (
-    <div className='w-full flex flex-col items-center border-y-2'>
+    <div className='w-full flex flex-col items-center '>
       <Heading level='h1' title='TUS LIBROS' />
       <Link to={buttonFavorite} >
         <button>{buttonText}</button>
