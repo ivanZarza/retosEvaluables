@@ -7,6 +7,7 @@ type InputProps = {
   name: string
   type: string
   pattern: string
+  required: boolean
   error: { [key: string]: boolean }
   recuperarDatos: (name: string, value: string | number | boolean) => void
   validarDatos: (name: string, value: string | number | boolean) => void
@@ -33,6 +34,7 @@ function InputComponent(props: InputProps) {
         name={props.name}
         ref={inputRef}
         pattern={props.pattern}
+        required={props.required}
         onFocus={() => setActivo(true)}
         onBlur={() => setActivo(false)}
         onChange={(event) => {

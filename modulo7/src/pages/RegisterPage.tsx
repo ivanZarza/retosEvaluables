@@ -12,6 +12,7 @@ type inputLibroProps = {
   placeholder: string,
   value: string | number | boolean,
   pattern: string
+  required: boolean
 }
 
 const {
@@ -28,6 +29,7 @@ function RegisterPage() {
       placeholder: 'Nombre',
       value: '',
       pattern: '^.{4,8}$',
+      required: true,
     },
     {
       name: 'last_name',
@@ -35,6 +37,7 @@ function RegisterPage() {
       placeholder: 'Apellidos',
       value: '',
       pattern: '^.{4,20}$',
+      required: true,
     },
     {
       name: 'email',
@@ -42,6 +45,7 @@ function RegisterPage() {
       placeholder: 'Correo electronico',
       value: '',
       pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$',
+      required: true,
     },
     {
       name: 'photo',
@@ -49,6 +53,7 @@ function RegisterPage() {
       placeholder: 'URL de la foto',
       value: '',
       pattern: '^.{4,200}$',
+      required: true,
     },
     {
       name: 'password1',
@@ -56,6 +61,7 @@ function RegisterPage() {
       placeholder: 'Contraseña',
       value: '',
       pattern: '^.{4,8}$',
+      required: true,
     },
     {
       name: 'password2',
@@ -63,6 +69,7 @@ function RegisterPage() {
       placeholder: 'Repite la contraseña',
       value: '',
       pattern: '^.{4,8}$',
+      required: true,
     },
   ])
 
@@ -92,9 +99,9 @@ function RegisterPage() {
   }
 
   function generarMensajeError(name: string, value: string | number | boolean | undefined): string {
-    if (!error) return ''
+    // if (!error) return ''
 
-    switch (name) {
+    switch (name) { 
 
       case 'name': {
         if (!value) return 'El nombre es obligatorio';
@@ -177,6 +184,8 @@ function RegisterPage() {
               type={input.type}
               name={input.name}
               pattern={input.pattern}
+              required={input.required}
+           /*    errorMessage={error[input.name] ? generarMensajeError(input.name, input.value) : ''} */
               error={error}
               validarDatos={validarDatos}
               recuperarDatos={recuperarDatos}

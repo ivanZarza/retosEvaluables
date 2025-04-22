@@ -13,6 +13,7 @@ type inputLibroProps = {
   placeholder: string,
   value: string | number | boolean,
   pattern: string,
+  required: boolean,
 }
 
 const {
@@ -28,6 +29,7 @@ function LoginPage() {
       placeholder: 'Email',
       value: '',
       pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      required: true,
     },
     {
       name: 'password',
@@ -35,6 +37,7 @@ function LoginPage() {
       placeholder: 'Contraseña',
       value: '',
       pattern: '^.{4,8}$',
+      required: true,
     },
   ])
 
@@ -116,6 +119,7 @@ function LoginPage() {
             type={input.type}
             name={input.name}
             pattern={input.pattern}
+            required={input.required}
             error={error}
             validarDatos={validarDatos}
             recuperarDatos={recuperarDatos}
