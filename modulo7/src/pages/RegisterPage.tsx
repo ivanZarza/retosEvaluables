@@ -99,7 +99,6 @@ function RegisterPage() {
   }
 
   function generarMensajeError(name: string, value: string | number | boolean | undefined): string {
-    // if (!error) return ''
 
     switch (name) { 
 
